@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChatSessionInputBarControl.h"
 
 @interface ConversationViewController : UIViewController
 /** 回话页面视图 - 消息展示视图*/
 @property (strong, nonatomic, readonly) UITableView *tableView;
+/** 聊天会话-输入视图 */
+@property (strong, nonatomic) ChatSessionInputBarControl *chatSessionInputBarControl;
+
+
 
 @end
