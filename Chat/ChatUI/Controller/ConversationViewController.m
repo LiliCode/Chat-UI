@@ -11,9 +11,11 @@
 #import <Masonry.h>
 
 
-@interface ConversationViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface ConversationViewController ()<UITableViewDataSource, UITableViewDelegate, ChatSessionInputBarControlDelegate>
 @property (strong, nonatomic) UITableView *conversationTableView;
 @property (strong, nonatomic) ChatSessionInputBarControl *inputBarControl;
+/** 消息列表 */
+@property (strong, nonatomic) NSMutableArray *messageList;
 
 @end
 
@@ -25,6 +27,10 @@
     
     self.automaticallyAdjustsScrollViewInsets = YES;
     
+    self.tableView.estimatedRowHeight = 50.0f;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.messageList = [[NSMutableArray alloc] init];
+    
     [self prepare];
     
 }
@@ -34,13 +40,13 @@
     // 创建tableView
     self.conversationTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     // 无Cell线条
-//    [self.conversationTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self.conversationTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     // 代理
     self.conversationTableView.delegate = self;
     self.conversationTableView.dataSource = self;
     // 输入视图
     self.inputBarControl = [[ChatSessionInputBarControl alloc] init];
-    
+    self.inputBarControl.delegate = self;
     // 添加
     [self.view addSubview:self.conversationTableView];
     [self.view addSubview:self.inputBarControl];
@@ -79,13 +85,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return self.messageList.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50 + UITableViewAutomaticDimension;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"测试数据-%lu", indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.text = [self.messageList objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -97,6 +110,20 @@
     
 }
 
+#pragma ChatSessionInputBarControlDelegate
+
+- (void)inputBarControl:(ChatSessionInputBarControl *)bar clickSend:(NSString *)text
+{
+    NSLog(@"send: {\"text\":\"%@\"}", text);
+    [self.messageList addObject:text];
+    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.messageList.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    
+}
+
+- (void)inputBarControl:(ChatSessionInputBarControl *)bar didSelectPlugin:(NSInteger)index
+{
+    NSLog(@"click plugin: %ld", index);
+}
 
 
 
