@@ -23,10 +23,10 @@
 		22FB67361F7F7156007A4888 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB67351F7F7156007A4888 /* UserInfo.m */; };
 		22FB673D1F7F7B4B007A4888 /* MessageBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB673C1F7F7B4B007A4888 /* MessageBaseCell.m */; };
 		22FB67431F7F7EA0007A4888 /* ChatSessionInputBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB67421F7F7EA0007A4888 /* ChatSessionInputBarControl.m */; };
-		22FB67461F7F7F0F007A4888 /* ChatPluginBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB67451F7F7F0F007A4888 /* ChatPluginBoardView.m */; };
-		22FB67491F7F7F62007A4888 /* ChatEmojiBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB67481F7F7F62007A4888 /* ChatEmojiBoardView.m */; };
 		22FB674D1F7F8CA9007A4888 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB674C1F7F8CA9007A4888 /* NSObject+JSON.m */; };
 		22FB67501F7F8CD4007A4888 /* UIView+ChatFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB674F1F7F8CD4007A4888 /* UIView+ChatFrame.m */; };
+		22FB67561F7FC481007A4888 /* ChatEmojiBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB67531F7FC481007A4888 /* ChatEmojiBoardView.m */; };
+		22FB67571F7FC481007A4888 /* ChatPluginBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB67551F7FC481007A4888 /* ChatPluginBoardView.m */; };
 		CD1B3FCE08DEF62DB8CACA73 /* libPods-ChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DADAF1C7B00796E63B614063 /* libPods-ChatTests.a */; };
 		DD991EE913B6108FD39BD9BB /* libPods-Chat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B656ED99C09C31129393DC /* libPods-Chat.a */; };
 /* End PBXBuildFile section */
@@ -82,14 +82,14 @@
 		22FB673C1F7F7B4B007A4888 /* MessageBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBaseCell.m; sourceTree = "<group>"; };
 		22FB67411F7F7EA0007A4888 /* ChatSessionInputBarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSessionInputBarControl.h; sourceTree = "<group>"; };
 		22FB67421F7F7EA0007A4888 /* ChatSessionInputBarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSessionInputBarControl.m; sourceTree = "<group>"; };
-		22FB67441F7F7F0F007A4888 /* ChatPluginBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatPluginBoardView.h; sourceTree = "<group>"; };
-		22FB67451F7F7F0F007A4888 /* ChatPluginBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatPluginBoardView.m; sourceTree = "<group>"; };
-		22FB67471F7F7F62007A4888 /* ChatEmojiBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmojiBoardView.h; sourceTree = "<group>"; };
-		22FB67481F7F7F62007A4888 /* ChatEmojiBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmojiBoardView.m; sourceTree = "<group>"; };
 		22FB674B1F7F8CA9007A4888 /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
 		22FB674C1F7F8CA9007A4888 /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
 		22FB674E1F7F8CD4007A4888 /* UIView+ChatFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ChatFrame.h"; sourceTree = "<group>"; };
 		22FB674F1F7F8CD4007A4888 /* UIView+ChatFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ChatFrame.m"; sourceTree = "<group>"; };
+		22FB67521F7FC481007A4888 /* ChatEmojiBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmojiBoardView.h; sourceTree = "<group>"; };
+		22FB67531F7FC481007A4888 /* ChatEmojiBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatEmojiBoardView.m; sourceTree = "<group>"; };
+		22FB67541F7FC481007A4888 /* ChatPluginBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatPluginBoardView.h; sourceTree = "<group>"; };
+		22FB67551F7FC481007A4888 /* ChatPluginBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatPluginBoardView.m; sourceTree = "<group>"; };
 		567A92D781138F72A2B9A1AE /* Pods-ChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatTests/Pods-ChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D102EC392ECE9685ABAA1F9 /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
 		7489F785E1BA24EFE6CD12EB /* Pods-ChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatUITests/Pods-ChatUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -244,8 +244,8 @@
 		22FB67261F7F4E03007A4888 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22FB67511F7FC481007A4888 /* ChatKeyboard */,
 				22FB67381F7F7B4B007A4888 /* ChatInputView */,
-				22FB67391F7F7B4B007A4888 /* ChatKeyboard */,
 				22FB673A1F7F7B4B007A4888 /* MessageCell */,
 			);
 			path = View;
@@ -256,19 +256,8 @@
 			children = (
 				22FB67411F7F7EA0007A4888 /* ChatSessionInputBarControl.h */,
 				22FB67421F7F7EA0007A4888 /* ChatSessionInputBarControl.m */,
-				22FB67441F7F7F0F007A4888 /* ChatPluginBoardView.h */,
-				22FB67451F7F7F0F007A4888 /* ChatPluginBoardView.m */,
-				22FB67471F7F7F62007A4888 /* ChatEmojiBoardView.h */,
-				22FB67481F7F7F62007A4888 /* ChatEmojiBoardView.m */,
 			);
 			path = ChatInputView;
-			sourceTree = "<group>";
-		};
-		22FB67391F7F7B4B007A4888 /* ChatKeyboard */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ChatKeyboard;
 			sourceTree = "<group>";
 		};
 		22FB673A1F7F7B4B007A4888 /* MessageCell */ = {
@@ -289,6 +278,17 @@
 				22FB674F1F7F8CD4007A4888 /* UIView+ChatFrame.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		22FB67511F7FC481007A4888 /* ChatKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				22FB67521F7FC481007A4888 /* ChatEmojiBoardView.h */,
+				22FB67531F7FC481007A4888 /* ChatEmojiBoardView.m */,
+				22FB67541F7FC481007A4888 /* ChatPluginBoardView.h */,
+				22FB67551F7FC481007A4888 /* ChatPluginBoardView.m */,
+			);
+			path = ChatKeyboard;
 			sourceTree = "<group>";
 		};
 		AC12FA17F7B05CAB8CEA7C82 /* Frameworks */ = {
@@ -586,6 +586,7 @@
 			files = (
 				22FB67301F7F688C007A4888 /* MessageContentItem.m in Sources */,
 				22FB673D1F7F7B4B007A4888 /* MessageBaseCell.m in Sources */,
+				22FB67571F7FC481007A4888 /* ChatPluginBoardView.m in Sources */,
 				22FB67361F7F7156007A4888 /* UserInfo.m in Sources */,
 				22FB67331F7F6D64007A4888 /* Message.m in Sources */,
 				22FB672D1F7F6876007A4888 /* MessageItem.m in Sources */,
@@ -593,10 +594,9 @@
 				22FB67501F7F8CD4007A4888 /* UIView+ChatFrame.m in Sources */,
 				22FB67271F7F4E03007A4888 /* ConversationViewController.m in Sources */,
 				22FB66ED1F7F483B007A4888 /* AppDelegate.m in Sources */,
-				22FB67461F7F7F0F007A4888 /* ChatPluginBoardView.m in Sources */,
+				22FB67561F7FC481007A4888 /* ChatEmojiBoardView.m in Sources */,
 				22FB66EA1F7F483B007A4888 /* main.m in Sources */,
 				22FB674D1F7F8CA9007A4888 /* NSObject+JSON.m in Sources */,
-				22FB67491F7F7F62007A4888 /* ChatEmojiBoardView.m in Sources */,
 				22FB67431F7F7EA0007A4888 /* ChatSessionInputBarControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

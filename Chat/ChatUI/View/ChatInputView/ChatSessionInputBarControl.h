@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
+FOUNDATION_EXTERN CGFloat const kChatInputBarContentHeight;
+
+
 @class ChatSessionInputBarControl;
 @protocol ChatSessionInputBarControlDelegate <NSObject>
 @optional
