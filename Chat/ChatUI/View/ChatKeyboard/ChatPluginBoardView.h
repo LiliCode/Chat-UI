@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 
 
+UIKIT_EXTERN NSString * const kChatPluginKeyboardWillShowNotification;
+UIKIT_EXTERN NSString * const kChatPluginKeyboardWillHideNotification;
+UIKIT_EXTERN NSString * const kChatPluginKeyboardDidShowNotification;
+UIKIT_EXTERN NSString * const kChatPluginKeyboardDidHideNotification;
+
+UIKIT_EXTERN const CGFloat kChatPluginKeyboardHeight;
+
+
 @class ChatPluginBoardView;
 @protocol ChatPluginBoardViewDelegate <NSObject>
 @optional

@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
+
+UIKIT_EXTERN const CGFloat kChatEmojiKeyboardHeight;
+
+
 @class ChatEmojiBoardView;
 @protocol ChatEmojiBoardViewDelegate <NSObject>
 @optional

@@ -8,6 +8,15 @@
 
 #import "ChatPluginBoardView.h"
 
+
+NSString * const kChatPluginKeyboardWillShowNotification = @"kChatPluginKeyboardWillShowNotification";
+NSString * const kChatPluginKeyboardWillHideNotification = @"kChatPluginKeyboardWillHideNotification";
+NSString * const kChatPluginKeyboardDidShowNotification = @"kChatPluginKeyboardDidShowNotification";
+NSString * const kChatPluginKeyboardDidHideNotification = @"kChatPluginKeyboardDidHideNotification";
+
+const CGFloat kChatPluginKeyboardHeight = 200.0f;
+
+
 @implementation ChatPluginBoardView
 
 

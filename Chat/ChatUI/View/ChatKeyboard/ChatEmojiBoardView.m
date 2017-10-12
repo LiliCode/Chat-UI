@@ -8,6 +8,8 @@
 
 #import "ChatEmojiBoardView.h"
 
+const CGFloat kChatEmojiKeyboardHeight = 250.0f;
+
 @implementation ChatEmojiBoardView
 
 

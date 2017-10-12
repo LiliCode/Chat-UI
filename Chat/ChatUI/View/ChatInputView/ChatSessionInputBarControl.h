@@ -32,6 +32,20 @@ FOUNDATION_EXTERN CGFloat const kChatInputBarContentHeight;
  */
 - (void)inputBarControl:(ChatSessionInputBarControl *)bar didSelectPlugin:(NSInteger)index;
 
+/**
+ 打开插件键盘-点击‘+’按钮
+
+ @param bar ChatSessionInputBarControl
+ */
+- (void)openPluginKeyboardWithInputBarControl:(ChatSessionInputBarControl *)bar;
+
+/**
+ 打开表情键盘-点击‘😈’按钮
+ 
+ @param bar ChatSessionInputBarControl
+ */
+- (void)openEmojiKeyboardWithInputBarControl:(ChatSessionInputBarControl *)bar;
+
 @end
 
 
@@ -40,6 +54,8 @@ FOUNDATION_EXTERN CGFloat const kChatInputBarContentHeight;
  页面输入视图-输入框-emoji-plugin
  */
 @interface ChatSessionInputBarControl : UIView
+/** 文本 */
+@property (copy , nonatomic) NSString *text;
 /** 代理对象 */
 @property (weak, nonatomic) id<ChatSessionInputBarControlDelegate> delegate;
 

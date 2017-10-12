@@ -34,7 +34,14 @@ typedef NS_ENUM(NSUInteger, MessageDirection)
 };
 
 
+#define kInputControl_PluginButtonNormal @"icon_add_def"
+#define kInputControl_PluginButtonHighlighted @"icon_add_pre"
 
+#define kInputControl_EmojiButtonNormal @"icon_smile_def"
+#define kInputControl_EmojiButtonHighlighted @"icon_smile_pre"
+
+#define kInputControl_PenButtonNormal @"icon_inport_def"
+#define kInputControl_PenButtonHighlighted @"icon_inport_def pre"
 
 
 #endif /* _MESSAGE_COMMON_H_ */
