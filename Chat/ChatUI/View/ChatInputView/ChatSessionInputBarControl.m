@@ -66,6 +66,13 @@ static CGFloat kTextViewBottom = 8.0f;
         make.height.mas_greaterThanOrEqualTo(kChatInputBarContentHeight-16);
     }];
     
+    // 插件入口 plugin
+    UIButton *pluginButton = [[UIButton alloc] init];
+    pluginButton addTarget:self action:@selector() forControlEvents:<#(UIControlEvents)#>
+    // 表情键盘 emoji
+    
+    
+    
     // 监听文本输入
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:) name:UITextViewTextDidChangeNotification object:nil];
     self.textViewLastHeight = kChatInputBarContentHeight;   // 初始值
@@ -137,6 +144,8 @@ static CGFloat kTextViewBottom = 8.0f;
             }
             
             self.textView.text = nil;
+            // 更新键盘尺寸
+            [self textDidChange:nil];
         }
         
         return NO;
@@ -144,6 +153,23 @@ static CGFloat kTextViewBottom = 8.0f;
     
     return YES;
 }
+
+
+#pragma mark - plugin action
+
+- (void)openPlugin:(UIButton *)sender
+{
+    
+}
+
+#pragma mark - emoji action
+
+- (void)openEmoji:(UIButton *)sender
+{
+    
+}
+
+
 
 
 #pragma mark - memory
