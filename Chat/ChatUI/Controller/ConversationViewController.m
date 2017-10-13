@@ -17,8 +17,13 @@
 @property (strong, nonatomic) UITableView *conversationTableView;
 @property (strong, nonatomic) ChatSessionInputBarControl *inputBarControl;
 @property (strong, nonatomic) UIView *pluginBGView; // emoji, plugin背景
+/** 插件键盘 */
+@property (strong, nonatomic) ChatPluginBoardView *pluginKeyboard;
+/** 表情键盘 */
+@property (strong, nonatomic) ChatEmojiBoardView *emojiKeyboard;
 /** 消息列表 */
 @property (strong, nonatomic) NSMutableArray *messageList;
+
 
 @end
 
@@ -52,7 +57,13 @@
     self.inputBarControl.delegate = self;
     // 键盘背景
     self.pluginBGView = [[UIView alloc] init];
-    self.pluginBGView.backgroundColor = [UIColor redColor];
+    self.pluginBGView.backgroundColor = [UIColor whiteColor];
+    // plugin
+    self.pluginKeyboard = [[ChatPluginBoardView alloc] init];
+    [self.pluginBGView addSubview:self.pluginKeyboard];
+    // emoji
+    self.emojiKeyboard = [[ChatEmojiBoardView alloc] init];
+    [self.pluginBGView addSubview:self.emojiKeyboard];
     // 添加
     [self.view addSubview:self.conversationTableView];
     [self.view addSubview:self.inputBarControl];
@@ -81,6 +92,20 @@
         make.bottom.equalTo(weakSelf.inputBarControl.mas_top).offset(0);
     }];
     
+    [self.pluginKeyboard mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(0);
+        make.left.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+    }];
+    
+    [self.emojiKeyboard mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(0);
+        make.left.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+    }];
+    
     // 监听键盘
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -93,8 +118,6 @@
 }
 
 
-
-
 #pragma mark - keyboard notification
 
 - (void)keyboardWillShow:(NSNotification *)sender
@@ -105,12 +128,13 @@
     CGRect bounds = [sender.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     // 动画时长
     CGFloat duration = [sender.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    // 改变约束
+    [self.pluginBGView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_offset(bounds.size.height);
+    }];
     
     [UIView animateWithDuration:duration animations:^{
-        // 改变约束
-        [self.pluginBGView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_offset(bounds.size.height);
-        }];
+        [self.pluginBGView layoutIfNeeded];
     }];
 }
 
@@ -119,11 +143,13 @@
     // 键盘将要隐藏
     // 动画时长
     CGFloat duration = [sender.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    // 改变约束
+    [self.pluginBGView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_offset(0);
+    }];
+    
     [UIView animateWithDuration:duration animations:^{
-        // 改变约束
-        [self.pluginBGView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_offset(0);
-        }];
+        [self.pluginBGView layoutIfNeeded];
     }];
 }
 
@@ -181,6 +207,12 @@
     CGRect frame = CGRectMake(0, 0, self.view.width, kChatPluginKeyboardHeight);
     NSNotification *noti = [NSNotification notificationWithName:UIKeyboardWillShowNotification object:nil userInfo:@{UIKeyboardFrameEndUserInfoKey:[NSValue valueWithCGRect:frame], UIKeyboardAnimationDurationUserInfoKey:@.3}];
     [self keyboardWillShow:noti];
+    
+    // 隐藏emoji、显示plugin
+    self.emojiKeyboard.hidden = YES;
+    self.pluginKeyboard.hidden = NO;
+    // plugin-显示到最上层
+    [self.pluginBGView bringSubviewToFront:self.pluginKeyboard];
 }
 
 - (void)openEmojiKeyboardWithInputBarControl:(ChatSessionInputBarControl *)bar
@@ -188,6 +220,12 @@
     CGRect frame = CGRectMake(0, 0, self.view.width, kChatEmojiKeyboardHeight);
     NSNotification *noti = [NSNotification notificationWithName:UIKeyboardWillShowNotification object:nil userInfo:@{UIKeyboardFrameEndUserInfoKey:[NSValue valueWithCGRect:frame], UIKeyboardAnimationDurationUserInfoKey:@.3}];
     [self keyboardWillShow:noti];
+    
+    // 隐藏plugin、显示emoji
+    self.emojiKeyboard.hidden = NO;
+    self.pluginKeyboard.hidden = YES;
+    // emoji-显示到最上层
+    [self.pluginBGView bringSubviewToFront:self.emojiKeyboard];
 }
 
 
