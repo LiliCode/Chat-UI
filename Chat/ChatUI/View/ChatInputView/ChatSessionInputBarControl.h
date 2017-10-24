@@ -61,6 +61,8 @@ FOUNDATION_EXTERN CGFloat const kChatInputBarContentHeight;
 @property (weak , nonatomic) id<ChatSessionInputBarControlDelegate> delegate;
 
 
+- (void)textDidChange;
+
 @end
 
 

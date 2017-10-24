@@ -13,7 +13,7 @@
 #import <Masonry.h>
 
 
-@interface ConversationViewController ()<UITableViewDataSource, UITableViewDelegate, ChatSessionInputBarControlDelegate>
+@interface ConversationViewController ()<UITableViewDataSource, UITableViewDelegate, ChatSessionInputBarControlDelegate, ChatEmojiBoardViewDelegate>
 @property (strong, nonatomic) UITableView *conversationTableView;
 @property (strong, nonatomic) ChatSessionInputBarControl *inputBarControl;
 @property (strong, nonatomic) UIView *pluginBGView; // emoji, plugin背景
@@ -45,6 +45,7 @@
 
 - (void)prepare
 {
+    self.view.backgroundColor = [UIColor whiteColor];
     // 创建tableView
     self.conversationTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     // 无Cell线条
@@ -63,6 +64,7 @@
     [self.pluginBGView addSubview:self.pluginKeyboard];
     // emoji
     self.emojiKeyboard = [[ChatEmojiBoardView alloc] init];
+    self.emojiKeyboard.delegate = self;
     [self.pluginBGView addSubview:self.emojiKeyboard];
     // 添加
     [self.view addSubview:self.conversationTableView];
@@ -109,6 +111,12 @@
     // 监听键盘
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    // 添加插件
+    
+    
+    
+    [self.pluginKeyboard insertPluginItem:nil];
+    
     
     
     
@@ -187,7 +195,7 @@
     
 }
 
-#pragma ChatSessionInputBarControlDelegate
+#pragma mark - ChatSessionInputBarControlDelegate
 
 - (void)inputBarControl:(ChatSessionInputBarControl *)bar clickSend:(NSString *)text
 {
@@ -228,7 +236,14 @@
     [self.pluginBGView bringSubviewToFront:self.emojiKeyboard];
 }
 
+#pragma mark - ChatEmojiBoardViewDelegate
 
+- (void)emojiBoardView:(ChatEmojiBoardView *)emojiView clickEmoji:(EmojiItem *)emoji
+{
+    self.chatSessionInputBarControl.text = [self.chatSessionInputBarControl.inputTextView.text stringByAppendingString:emoji.emojiEncode];
+    
+    [self.chatSessionInputBarControl textDidChange];
+}
 
 
 #pragma mark - getter setter

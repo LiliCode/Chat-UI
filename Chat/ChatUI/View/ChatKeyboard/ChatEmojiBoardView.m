@@ -7,11 +7,13 @@
 //
 
 #import "ChatEmojiBoardView.h"
+#import "ChatEmojiIItem.h"
 #import <Masonry.h>
 
 const CGFloat kChatEmojiKeyboardHeight = 250.0f;
-const CGFloat kEmojiSize = 40.0f;
-const NSInteger kEmojiNumberOfCols = 8;
+const NSInteger kChatEmojiNumberOfCols = 10;
+
+static NSString * const kCellIdef = @"Cell";
 
 #define EMOJI_CODE_TO_SYMBOL(x) ((((0x808080F0 | (x & 0x3F000) >> 4) | (x & 0xFC0) << 10) | (x & 0x1C0000) << 18) | (x & 0x3F) << 24)
 
@@ -47,6 +49,8 @@ const NSInteger kEmojiNumberOfCols = 8;
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
     self.emojiCollectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
+    self.emojiCollectionView.dataSource = self;
+    self.emojiCollectionView.delegate = self;
     self.emojiCollectionView.backgroundColor = [UIColor whiteColor];
     
     [self addSubview:self.emojiCollectionView];
@@ -57,9 +61,18 @@ const NSInteger kEmojiNumberOfCols = 8;
         make.bottom.mas_equalTo(0);
     }];
     
+    [self.emojiCollectionView registerClass:[ChatEmojiIItem class] forCellWithReuseIdentifier:kCellIdef];
+    
     // 获取emoji
     [self.class getSystemEmojis:^(NSArray *emojis) {
-        self.emojis = [emojis copy];
+        NSMutableArray *mEmojis = [[NSMutableArray alloc] init];
+        for (NSString *eString in emojis)
+        {
+            EmojiItem *item = [EmojiItem emojiWithEncode:eString type:EmojiItemType_emoji];
+            [mEmojis addObject:item];
+        }
+        
+        self.emojis = [mEmojis copy];
         [self.emojiCollectionView reloadData];
     }];
 }
@@ -77,14 +90,14 @@ const NSInteger kEmojiNumberOfCols = 8;
     return self.emojis.count;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return CGSizeMake(kEmojiSize, kEmojiSize);
-}
-
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    return nil;
+    ChatEmojiIItem *item = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdef forIndexPath:indexPath];
+    
+    EmojiItem *itemModel = [self.emojis objectAtIndex:indexPath.row];
+    item.label.text = itemModel.emojiEncode;
+    
+    return item;
 }
 
 
@@ -104,8 +117,8 @@ const NSInteger kEmojiNumberOfCols = 8;
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat w = self.bounds.size.width / kEmojiNumberOfCols;
-    return CGSizeMake(w, w);
+    CGFloat itemSize = self.bounds.size.width / (CGFloat)kChatEmojiNumberOfCols;
+    return CGSizeMake(itemSize, itemSize);
 }
 
 

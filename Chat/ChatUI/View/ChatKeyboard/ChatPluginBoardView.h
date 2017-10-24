@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "PluginItem.h"
 
 UIKIT_EXTERN NSString * const kChatPluginKeyboardWillShowNotification;
 UIKIT_EXTERN NSString * const kChatPluginKeyboardWillHideNotification;
@@ -38,6 +38,19 @@ UIKIT_EXTERN const CGFloat kChatPluginKeyboardHeight;
 @interface ChatPluginBoardView : UIView
 /** 代理对象 */
 @property (weak, nonatomic) id<ChatPluginBoardViewDelegate> delegate;
+
+
+/**
+ 插入plugin item
+
+ @param item PluginItem
+ */
+- (void)insertPluginItem:(PluginItem *)item;
+
+/**
+ 刷新plugin
+ */
+- (void)reloadPlugins;
 
 @end
 
