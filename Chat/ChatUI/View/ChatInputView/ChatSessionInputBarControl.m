@@ -45,6 +45,11 @@ static CGFloat kTextViewBottom = 8.0f;
     return self.textView.text;
 }
 
+- (UITextView *)inputTextView
+{
+    return self.textView;
+}
+
 - (void)prepare
 {
     // UI

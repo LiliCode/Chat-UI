@@ -49,15 +49,16 @@ FOUNDATION_EXTERN CGFloat const kChatInputBarContentHeight;
 @end
 
 
-
 /**
  页面输入视图-输入框-emoji-plugin
  */
 @interface ChatSessionInputBarControl : UIView
+/** text view */
+@property (strong , nonatomic , readonly) UITextView *inputTextView;
 /** 文本 */
 @property (copy , nonatomic) NSString *text;
 /** 代理对象 */
-@property (weak, nonatomic) id<ChatSessionInputBarControlDelegate> delegate;
+@property (weak , nonatomic) id<ChatSessionInputBarControlDelegate> delegate;
 
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EmojiItem.h"
 
 
 UIKIT_EXTERN const CGFloat kChatEmojiKeyboardHeight;
@@ -23,7 +23,7 @@ UIKIT_EXTERN const CGFloat kChatEmojiKeyboardHeight;
  @param emojiView ChatEmojiBoardView
  @param emoji 表情文字
  */
-- (void)emojiBoardView:(ChatEmojiBoardView *)emojiView clickEmoji:(NSString *)emoji;
+- (void)emojiBoardView:(ChatEmojiBoardView *)emojiView clickEmoji:(EmojiItem *)emoji;
 
 /**
  点击退格键-删除最后一个表情文字

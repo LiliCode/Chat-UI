@@ -207,7 +207,7 @@
     CGRect frame = CGRectMake(0, 0, self.view.width, kChatPluginKeyboardHeight);
     NSNotification *noti = [NSNotification notificationWithName:UIKeyboardWillShowNotification object:nil userInfo:@{UIKeyboardFrameEndUserInfoKey:[NSValue valueWithCGRect:frame], UIKeyboardAnimationDurationUserInfoKey:@.3}];
     [self keyboardWillShow:noti];
-    
+
     // 隐藏emoji、显示plugin
     self.emojiKeyboard.hidden = YES;
     self.pluginKeyboard.hidden = NO;
@@ -220,7 +220,7 @@
     CGRect frame = CGRectMake(0, 0, self.view.width, kChatEmojiKeyboardHeight);
     NSNotification *noti = [NSNotification notificationWithName:UIKeyboardWillShowNotification object:nil userInfo:@{UIKeyboardFrameEndUserInfoKey:[NSValue valueWithCGRect:frame], UIKeyboardAnimationDurationUserInfoKey:@.3}];
     [self keyboardWillShow:noti];
-    
+
     // 隐藏plugin、显示emoji
     self.emojiKeyboard.hidden = NO;
     self.pluginKeyboard.hidden = YES;
