@@ -19,7 +19,7 @@ const CGFloat kChatPluginKeyboardHeight = 200.0f;
 
 
 static NSString * const kCellIdef = @"Cell";
-const NSInteger kChatPluginNumberOfCols = 4;
+const NSInteger kChatPluginNumberOfCols = 5;
 
 @interface ChatPluginBoardView ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 /** plugin list */
@@ -54,8 +54,8 @@ const NSInteger kChatPluginNumberOfCols = 4;
     
     // collection
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.minimumLineSpacing = 0;
-    layout.minimumInteritemSpacing = 0;
+    layout.minimumLineSpacing = 10;
+    layout.minimumInteritemSpacing = 10;
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
@@ -70,7 +70,6 @@ const NSInteger kChatPluginNumberOfCols = 4;
     }];
     // 注册cell
     [self.collectionView registerClass:[ChatPluginItem class] forCellWithReuseIdentifier:kCellIdef];
-    
 }
 
 - (NSMutableArray *)pluginList
@@ -135,10 +134,14 @@ const NSInteger kChatPluginNumberOfCols = 4;
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat itemSize = self.bounds.size.width / (CGFloat)kChatPluginNumberOfCols;
-    return CGSizeMake(itemSize, itemSize);
+    CGFloat itemSize = (self.bounds.size.width - (kChatPluginNumberOfCols + 1) * 10) / (CGFloat)kChatPluginNumberOfCols;
+    return CGSizeMake(itemSize, itemSize + 20);
 }
 
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(10, 10, 10, 10);    //分别为上、左、下、右
+}
 
 @end
 

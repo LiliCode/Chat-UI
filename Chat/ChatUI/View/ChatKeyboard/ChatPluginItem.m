@@ -49,7 +49,7 @@ const CGFloat kItemTitleHeight = 20;
     if (!_label)
     {
         _label = [[UILabel alloc] init];
-        _label.font = [UIFont systemFontOfSize:14];
+        _label.font = [UIFont systemFontOfSize:12];
         _label.textAlignment = NSTextAlignmentCenter;
         _label.userInteractionEnabled = YES;
     }

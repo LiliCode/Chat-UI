@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00E07DDEB6A33AEE49CC3075 /* libPods-ChatUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB869B1C2DCD7DDABE409A2 /* libPods-ChatUITests.a */; };
+		2277C23B1FA01F8D0060478F /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277C23A1FA01F8D0060478F /* KeyboardViewController.m */; };
+		2277C23F1FA01F8D0060478F /* EmojiKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2277C2371FA01F8D0060478F /* EmojiKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		22E1D34B1F9F2E4500FA0D26 /* ChatEmojiIItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E1D34A1F9F2E4500FA0D26 /* ChatEmojiIItem.m */; };
 		22E1D34E1F9F414400FA0D26 /* PluginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E1D34D1F9F414400FA0D26 /* PluginItem.m */; };
 		22E1D3511F9F43AA00FA0D26 /* ChatPluginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E1D3501F9F43AA00FA0D26 /* ChatPluginItem.m */; };
@@ -36,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2277C23D1FA01F8D0060478F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22FB66DD1F7F483B007A4888 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2277C2361FA01F8D0060478F;
+			remoteInfo = EmojiKeyboard;
+		};
 		22FB66FF1F7F483B007A4888 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 22FB66DD1F7F483B007A4888 /* Project object */;
@@ -52,9 +61,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2277C2431FA01F8D0060478F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2277C23F1FA01F8D0060478F /* EmojiKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1325FC757DE2C6949A6C6BAD /* Pods-ChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatTests/Pods-ChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		1580F30CDD59761F8D73D3A5 /* Pods-ChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatUITests/Pods-ChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2277C2371FA01F8D0060478F /* EmojiKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmojiKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2277C2391FA01F8D0060478F /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
+		2277C23A1FA01F8D0060478F /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
+		2277C23C1FA01F8D0060478F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E1D3491F9F2E4500FA0D26 /* ChatEmojiIItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatEmojiIItem.h; sourceTree = "<group>"; };
 		22E1D34A1F9F2E4500FA0D26 /* ChatEmojiIItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatEmojiIItem.m; sourceTree = "<group>"; };
 		22E1D34C1F9F414400FA0D26 /* PluginItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PluginItem.h; sourceTree = "<group>"; };
@@ -112,6 +139,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2277C2341FA01F8D0060478F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22FB66E21F7F483B007A4888 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,12 +186,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2277C2381FA01F8D0060478F /* EmojiKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2277C2391FA01F8D0060478F /* KeyboardViewController.h */,
+				2277C23A1FA01F8D0060478F /* KeyboardViewController.m */,
+				2277C23C1FA01F8D0060478F /* Info.plist */,
+			);
+			path = EmojiKeyboard;
+			sourceTree = "<group>";
+		};
 		22FB66DC1F7F483B007A4888 = {
 			isa = PBXGroup;
 			children = (
 				22FB66E71F7F483B007A4888 /* Chat */,
 				22FB67011F7F483B007A4888 /* ChatTests */,
 				22FB670C1F7F483B007A4888 /* ChatUITests */,
+				2277C2381FA01F8D0060478F /* EmojiKeyboard */,
 				22FB66E61F7F483B007A4888 /* Products */,
 				0CE5E1A83BE80603A7C94A78 /* Pods */,
 				AC12FA17F7B05CAB8CEA7C82 /* Frameworks */,
@@ -170,6 +215,7 @@
 				22FB66E51F7F483B007A4888 /* Chat.app */,
 				22FB66FE1F7F483B007A4888 /* ChatTests.xctest */,
 				22FB67091F7F483B007A4888 /* ChatUITests.xctest */,
+				2277C2371FA01F8D0060478F /* EmojiKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -324,6 +370,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2277C2361FA01F8D0060478F /* EmojiKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2277C2421FA01F8D0060478F /* Build configuration list for PBXNativeTarget "EmojiKeyboard" */;
+			buildPhases = (
+				2277C2331FA01F8D0060478F /* Sources */,
+				2277C2341FA01F8D0060478F /* Frameworks */,
+				2277C2351FA01F8D0060478F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EmojiKeyboard;
+			productName = EmojiKeyboard;
+			productReference = 2277C2371FA01F8D0060478F /* EmojiKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		22FB66E41F7F483B007A4888 /* Chat */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22FB67121F7F483B007A4888 /* Build configuration list for PBXNativeTarget "Chat" */;
@@ -334,10 +397,12 @@
 				22FB66E31F7F483B007A4888 /* Resources */,
 				9FD7714E2F81C6243FC6C7C4 /* [CP] Embed Pods Frameworks */,
 				419CABDFAD39903604C92A4B /* [CP] Copy Pods Resources */,
+				2277C2431FA01F8D0060478F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2277C23E1FA01F8D0060478F /* PBXTargetDependency */,
 			);
 			name = Chat;
 			productName = Chat;
@@ -395,6 +460,11 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "李立";
 				TargetAttributes = {
+					2277C2361FA01F8D0060478F = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = 4J96E2Q5H6;
+						ProvisioningStyle = Automatic;
+					};
 					22FB66E41F7F483B007A4888 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 4J96E2Q5H6;
@@ -430,11 +500,19 @@
 				22FB66E41F7F483B007A4888 /* Chat */,
 				22FB66FD1F7F483B007A4888 /* ChatTests */,
 				22FB67081F7F483B007A4888 /* ChatUITests */,
+				2277C2361FA01F8D0060478F /* EmojiKeyboard */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2277C2351FA01F8D0060478F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22FB66E31F7F483B007A4888 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -609,6 +687,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2277C2331FA01F8D0060478F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2277C23B1FA01F8D0060478F /* KeyboardViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22FB66E11F7F483B007A4888 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -653,6 +739,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2277C23E1FA01F8D0060478F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2277C2361FA01F8D0060478F /* EmojiKeyboard */;
+			targetProxy = 2277C23D1FA01F8D0060478F /* PBXContainerItemProxy */;
+		};
 		22FB67001F7F483B007A4888 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22FB66E41F7F483B007A4888 /* Chat */;
@@ -685,6 +776,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2277C2401FA01F8D0060478F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J96E2Q5H6;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = EmojiKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Lili.Chat.EmojiKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2277C2411FA01F8D0060478F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4J96E2Q5H6;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = EmojiKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Lili.Chat.EmojiKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		22FB67101F7F483B007A4888 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -794,6 +921,7 @@
 			baseConfigurationReference = C6A6C671623AF85D655D0F53 /* Pods-Chat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4J96E2Q5H6;
 				INFOPLIST_FILE = Chat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -808,6 +936,7 @@
 			baseConfigurationReference = 5D102EC392ECE9685ABAA1F9 /* Pods-Chat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4J96E2Q5H6;
 				INFOPLIST_FILE = Chat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -874,6 +1003,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2277C2421FA01F8D0060478F /* Build configuration list for PBXNativeTarget "EmojiKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2277C2401FA01F8D0060478F /* Debug */,
+				2277C2411FA01F8D0060478F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		22FB66E01F7F483B007A4888 /* Build configuration list for PBXProject "Chat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

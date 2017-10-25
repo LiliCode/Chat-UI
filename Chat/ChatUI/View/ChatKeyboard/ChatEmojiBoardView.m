@@ -10,7 +10,7 @@
 #import "ChatEmojiIItem.h"
 #import <Masonry.h>
 
-const CGFloat kChatEmojiKeyboardHeight = 250.0f;
+const CGFloat kChatEmojiKeyboardHeight = 200.0f;
 const NSInteger kChatEmojiNumberOfCols = 10;
 
 static NSString * const kCellIdef = @"Cell";
@@ -117,10 +117,14 @@ static NSString * const kCellIdef = @"Cell";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat itemSize = self.bounds.size.width / (CGFloat)kChatEmojiNumberOfCols;
+    CGFloat itemSize = (self.bounds.size.width - 10) / (CGFloat)kChatEmojiNumberOfCols;
     return CGSizeMake(itemSize, itemSize);
 }
 
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 5, 5, 5);    //分别为上、左、下、右
+}
 
 #pragma mark - emoji
 
