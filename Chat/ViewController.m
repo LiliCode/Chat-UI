@@ -22,12 +22,6 @@
     
 }
 
-- (IBAction)chat:(UIButton *)sender
-{
-    ConversationViewController *chat = [[ConversationViewController alloc] init];
-    
-    [self.navigationController pushViewController:chat animated:YES];
-}
 
 - (void)didReceiveMemoryWarning
 {

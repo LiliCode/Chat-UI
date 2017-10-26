@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DK3-bX-tzO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DK3-bX-tzO">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="122" y="269" width="76" height="30"/>
                                 <state key="normal" title="Chat Room"/>
                                 <connections>
-                                    <action selector="chat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="je0-1g-ZOj"/>
+                                    <segue destination="fqv-Uu-CAI" kind="show" id="cfP-v6-yWS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,13 +41,38 @@
             </objects>
             <point key="canvasLocation" x="894" y="446"/>
         </scene>
+        <!--回话页面-->
+        <scene sceneID="SLo-uQ-si6">
+            <objects>
+                <viewController id="fqv-Uu-CAI" customClass="ChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cEt-uW-tBQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="cjy-Ug-gm2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8fW-Ch-JGH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="回话页面" id="b2A-WB-jXc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="W6P-9T-e6W">
+                            <connections>
+                                <action selector="endEdit:" destination="fqv-Uu-CAI" id="VqS-Rq-Q1v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MyA-Ca-cb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1697" y="446"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="VRa-NI-r1M">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DK3-bX-tzO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0mq-Zw-NtK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

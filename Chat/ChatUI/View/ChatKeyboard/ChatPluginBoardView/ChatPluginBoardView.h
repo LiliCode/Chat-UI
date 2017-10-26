@@ -6,7 +6,7 @@
 //  Copyright © 2017年 李立. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ChatKeyboard.h"
 #import "PluginItem.h"
 
 UIKIT_EXTERN NSString * const kChatPluginKeyboardWillShowNotification;
@@ -35,7 +35,7 @@ UIKIT_EXTERN const CGFloat kChatPluginKeyboardHeight;
 /**
  扩展视图-例如：图片，相机，位置...
  */
-@interface ChatPluginBoardView : UIView
+@interface ChatPluginBoardView : ChatKeyboard
 /** 代理对象 */
 @property (weak, nonatomic) id<ChatPluginBoardViewDelegate> delegate;
 

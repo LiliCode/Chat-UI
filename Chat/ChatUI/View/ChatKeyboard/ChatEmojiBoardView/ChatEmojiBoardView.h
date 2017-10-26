@@ -6,7 +6,7 @@
 //  Copyright © 2017年 李立. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ChatKeyboard.h"
 #import "EmojiItem.h"
 
 
@@ -45,7 +45,7 @@ UIKIT_EXTERN const CGFloat kChatEmojiKeyboardHeight;
 /**
  表情视图
  */
-@interface ChatEmojiBoardView : UIView
+@interface ChatEmojiBoardView : ChatKeyboard
 /** 代理对象 */
 @property (weak, nonatomic) id<ChatEmojiBoardViewDelegate> delegate;
 

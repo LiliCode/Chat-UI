@@ -43,6 +43,26 @@ static NSString * const kCellIdef = @"Cell";
     return self;
 }
 
+- (instancetype)initWithTextView:(UITextView *)textView
+{
+    if (self = [super initWithTextView:textView])
+    {
+        [self prepareUI];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithTextField:(UITextField *)textField
+{
+    if (self = [super initWithTextField:textField])
+    {
+        [self prepareUI];
+    }
+    
+    return self;
+}
+
 - (void)prepareUI
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -106,6 +126,16 @@ static NSString * const kCellIdef = @"Cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     EmojiItem *item = [self.emojis objectAtIndex:indexPath.row];
+    
+    if (self.textView)
+    {
+        [self.textView insertText:item.emojiEncode];
+    }
+    
+    if (self.textField)
+    {
+        [self.textField insertText:item.emojiEncode];
+    }
     
     if ([self.delegate respondsToSelector:@selector(emojiBoardView:clickEmoji:)])
     {

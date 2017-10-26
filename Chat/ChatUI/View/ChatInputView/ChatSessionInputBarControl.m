@@ -136,11 +136,6 @@ static CGFloat kTextViewBottom = 8.0f;
     }];
 }
 
-- (void)textDidChange
-{
-    [self textDidChange:nil];   // 改变文字输入框的高度
-}
-
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
@@ -193,7 +188,11 @@ static CGFloat kTextViewBottom = 8.0f;
 
 - (void)penAction:(UIButton *)sender
 {
-    NSLog(@"打开笔输入...");
+    [self.textView resignFirstResponder];
+    if ([self.delegate respondsToSelector:@selector(openSystemKeyboardWithInputBarControl:)])
+    {
+        [self.delegate openSystemKeyboardWithInputBarControl:self];
+    }
 }
 
 

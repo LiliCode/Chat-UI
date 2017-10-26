@@ -46,6 +46,13 @@ FOUNDATION_EXTERN CGFloat const kChatInputBarContentHeight;
  */
 - (void)openEmojiKeyboardWithInputBarControl:(ChatSessionInputBarControl *)bar;
 
+/**
+ 打开系统键盘
+
+ @param bar ChatSessionInputBarControl
+ */
+- (void)openSystemKeyboardWithInputBarControl:(ChatSessionInputBarControl *)bar;
+
 @end
 
 
@@ -60,8 +67,6 @@ FOUNDATION_EXTERN CGFloat const kChatInputBarContentHeight;
 /** 代理对象 */
 @property (weak , nonatomic) id<ChatSessionInputBarControlDelegate> delegate;
 
-
-- (void)textDidChange;
 
 @end
 
