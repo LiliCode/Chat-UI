@@ -11,7 +11,7 @@
 #import <Masonry.h>
 
 const CGFloat kChatEmojiKeyboardHeight = 200.0f;
-const NSInteger kChatEmojiNumberOfCols = 10;
+const NSInteger kChatEmojiNumberOfCols = 8;
 
 static NSString * const kCellIdef = @"Cell";
 

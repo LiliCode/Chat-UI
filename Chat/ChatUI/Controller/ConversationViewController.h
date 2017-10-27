@@ -16,5 +16,9 @@
 @property (strong, nonatomic) ChatSessionInputBarControl *chatSessionInputBarControl;
 
 
+/**
+ 停止编辑
+ */
+- (void)endEditing;
 
 @end

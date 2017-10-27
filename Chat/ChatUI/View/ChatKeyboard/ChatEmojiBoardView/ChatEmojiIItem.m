@@ -39,7 +39,7 @@
     if (!_label)
     {
         _label = [[UILabel alloc] init];
-        _label.font = [UIFont systemFontOfSize:20];
+        _label.font = [UIFont systemFontOfSize:30];
         _label.textAlignment = NSTextAlignmentCenter;
         _label.userInteractionEnabled = YES;
     }

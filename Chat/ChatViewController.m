@@ -23,7 +23,7 @@
 
 - (IBAction)endEdit:(UIBarButtonItem *)sender
 {
-    [self.view endEditing:YES];
+    [self endEditing];
 }
 
 

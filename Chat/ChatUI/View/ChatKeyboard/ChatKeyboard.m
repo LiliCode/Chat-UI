@@ -8,6 +8,8 @@
 
 #import "ChatKeyboard.h"
 
+const CGFloat kChatKeyboardAnimationDuration = 0.25;
+
 @interface ChatKeyboard ()
 
 @end

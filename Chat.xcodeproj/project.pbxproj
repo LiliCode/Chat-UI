@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E07DDEB6A33AEE49CC3075 /* libPods-ChatUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB869B1C2DCD7DDABE409A2 /* libPods-ChatUITests.a */; };
+		22444F131FA3328A00800C55 /* ChatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22444F121FA3328A00800C55 /* ChatTableView.m */; };
 		2277C23B1FA01F8D0060478F /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277C23A1FA01F8D0060478F /* KeyboardViewController.m */; };
 		2277C23F1FA01F8D0060478F /* EmojiKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2277C2371FA01F8D0060478F /* EmojiKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2277C2461FA058600060478F /* ChatKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277C2451FA058600060478F /* ChatKeyboard.m */; };
@@ -80,6 +81,8 @@
 /* Begin PBXFileReference section */
 		1325FC757DE2C6949A6C6BAD /* Pods-ChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatTests/Pods-ChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		1580F30CDD59761F8D73D3A5 /* Pods-ChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatUITests/Pods-ChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		22444F111FA3328A00800C55 /* ChatTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatTableView.h; sourceTree = "<group>"; };
+		22444F121FA3328A00800C55 /* ChatTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatTableView.m; sourceTree = "<group>"; };
 		2277C2371FA01F8D0060478F /* EmojiKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmojiKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2277C2391FA01F8D0060478F /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
 		2277C23A1FA01F8D0060478F /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
@@ -190,6 +193,15 @@
 				7489F785E1BA24EFE6CD12EB /* Pods-ChatUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		22444F101FA3327300800C55 /* ChatTableView */ = {
+			isa = PBXGroup;
+			children = (
+				22444F111FA3328A00800C55 /* ChatTableView.h */,
+				22444F121FA3328A00800C55 /* ChatTableView.m */,
+			);
+			path = ChatTableView;
 			sourceTree = "<group>";
 		};
 		2277C2381FA01F8D0060478F /* EmojiKeyboard */ = {
@@ -336,6 +348,7 @@
 		22FB67261F7F4E03007A4888 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22444F101FA3327300800C55 /* ChatTableView */,
 				22FB67511F7FC481007A4888 /* ChatKeyboard */,
 				22FB67381F7F7B4B007A4888 /* ChatInputView */,
 				22FB673A1F7F7B4B007A4888 /* MessageCell */,
@@ -739,6 +752,7 @@
 				2277C2541FA05A440060478F /* ChatEmojiBoardView.m in Sources */,
 				22FB66ED1F7F483B007A4888 /* AppDelegate.m in Sources */,
 				22FB66EA1F7F483B007A4888 /* main.m in Sources */,
+				22444F131FA3328A00800C55 /* ChatTableView.m in Sources */,
 				22FA8D371F99ED3F00A3440F /* EmojiItem.m in Sources */,
 				2277C2521FA05A440060478F /* ChatPluginItem.m in Sources */,
 				22FB674D1F7F8CA9007A4888 /* NSObject+JSON.m in Sources */,

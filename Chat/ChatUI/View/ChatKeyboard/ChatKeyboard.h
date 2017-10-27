@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+UIKIT_EXTERN const CGFloat kChatKeyboardAnimationDuration;
+
 @interface ChatKeyboard : UIView
 /** UITextField输入框 */
 @property (weak, nonatomic) UITextField *textField;

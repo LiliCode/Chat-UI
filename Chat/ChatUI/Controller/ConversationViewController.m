@@ -7,23 +7,25 @@
 //
 
 #import "ConversationViewController.h"
+#import "ChatTableView.h"
 #import "ChatPluginBoardView.h"
 #import "ChatEmojiBoardView.h"
 #import "UIView+ChatFrame.h"
 #import <Masonry.h>
 
 
-@interface ConversationViewController ()<UITableViewDataSource, UITableViewDelegate, ChatSessionInputBarControlDelegate, ChatEmojiBoardViewDelegate>
-@property (strong, nonatomic) UITableView *conversationTableView;
+@interface ConversationViewController ()<UITableViewDataSource, UITableViewDelegate, ChatTableViewDelegate, ChatSessionInputBarControlDelegate, ChatEmojiBoardViewDelegate>
+@property (strong, nonatomic) ChatTableView *conversationTableView;
 @property (strong, nonatomic) ChatSessionInputBarControl *inputBarControl;
+/** 表情键盘背景视图 */
+@property (strong, nonatomic) UIView *pluginBackgroundView;
 /** 插件键盘 */
 @property (strong, nonatomic) ChatPluginBoardView *pluginKeyboard;
 @property (assign, nonatomic) BOOL isShowPluginKeyboard;
 /** 表情键盘 */
 @property (strong, nonatomic) ChatEmojiBoardView *emojiKeyboard;
 @property (assign, nonatomic) BOOL isShowEmojiKeyboard;
-/** 键盘将要切换 */
-@property (assign, nonatomic) BOOL keyboardWillChange;
+
 /** 消息列表 */
 @property (strong, nonatomic) NSMutableArray *messageList;
 
@@ -45,16 +47,12 @@
     [self prepare];
 }
 
-- (void)endEdit
-{
-    [self.view endEditing:YES];
-}
-
 - (void)prepare
 {
     self.view.backgroundColor = [UIColor whiteColor];
     // 创建tableView
-    self.conversationTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.conversationTableView = [[ChatTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.conversationTableView.chatDelegate = self;
     // 无Cell线条
     [self.conversationTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     // 代理
@@ -63,23 +61,36 @@
     // 输入视图
     self.inputBarControl = [[ChatSessionInputBarControl alloc] init];
     self.inputBarControl.delegate = self;
+    // emoji plugin 背景视图
+    self.pluginBackgroundView = [[UIView alloc] init];
+    self.pluginBackgroundView.backgroundColor = [UIColor whiteColor];
     // plugin
     self.pluginKeyboard = [[ChatPluginBoardView alloc] init];
     self.pluginKeyboard.bounds = CGRectMake(0, 0, self.view.width, kChatPluginKeyboardHeight);
+    [self.pluginBackgroundView addSubview:self.pluginKeyboard];
     // emoji
     self.emojiKeyboard = [[ChatEmojiBoardView alloc] initWithTextView:self.inputBarControl.inputTextView];
     self.emojiKeyboard.bounds = CGRectMake(0, 0, self.view.width, kChatEmojiKeyboardHeight);
     self.emojiKeyboard.delegate = self;
+    [self.pluginBackgroundView addSubview:self.emojiKeyboard];
     // 添加
     [self.view addSubview:self.conversationTableView];
     [self.view addSubview:self.inputBarControl];
+    [self.view addSubview:self.pluginBackgroundView];
     
     __weak typeof(self) weakSelf = self;
+    
+    [self.pluginBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_offset(0);
+        make.left.mas_offset(0);
+        make.right.mas_offset(0);
+        make.height.mas_offset(0);
+    }];
     
     [self.inputBarControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0).offset(0);
         make.right.mas_equalTo(0).offset(0);
-        make.bottom.mas_offset(0).offset(0);
+        make.bottom.equalTo(weakSelf.pluginBackgroundView.mas_top).offset(0);
         make.height.mas_equalTo(0).offset(kChatInputBarContentHeight);
     }];
     
@@ -89,11 +100,24 @@
         make.right.mas_equalTo(0).offset(0);
         make.bottom.equalTo(weakSelf.inputBarControl.mas_top).offset(0);
     }];
+    
+    [self.emojiKeyboard mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_offset(0);
+        make.left.mas_offset(0);
+        make.right.mas_offset(0);
+        make.top.mas_offset(0);
+    }];
+    
+    [self.pluginKeyboard mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_offset(0);
+        make.left.mas_offset(0);
+        make.right.mas_offset(0);
+        make.top.mas_offset(0);
+    }];
 
     // 监听键盘
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillChangeFrameNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputModeDidChange:) name:UITextInputCurrentInputModeDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     // 添加插件
     PluginItem *photoLibItem = [PluginItem pluginItemWithTitle:@"图片" image:@"actionbar_picture_icon" callback:^(id sender) {
@@ -127,17 +151,20 @@
     CGRect bounds = [sender.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     // 动画时长
     CGFloat duration = [sender.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    if (CGRectGetHeight(bounds) != CGRectGetHeight(self.pluginBackgroundView.bounds))
+    {
+        // 改变约束
+        [self.pluginBackgroundView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_offset(bounds.size.height);
+        }];
+        
+        [self.view setNeedsUpdateConstraints];
+        [self.view updateConstraintsIfNeeded];
+        [UIView animateWithDuration:duration animations:^{
+            [self.view layoutIfNeeded];  // 如果约束有改变就更新布局
+        }];
+    }
     
-    // 改变约束
-    [self.inputBarControl mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_offset(-bounds.size.height);
-    }];
-    
-    [self.view setNeedsUpdateConstraints];
-    [self.view updateConstraintsIfNeeded];
-    [UIView animateWithDuration:duration animations:^{
-        [self.view layoutIfNeeded];  // 如果约束有改变就更新布局
-    }];
 }
 
 - (void)keyboardWillHide:(NSNotification *)sender
@@ -145,21 +172,38 @@
     // 键盘将要隐藏
     // 动画时长
     CGFloat duration = [sender.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    if (!self.isShowEmojiKeyboard && !self.isShowPluginKeyboard)
+    {
+        // 改变约束
+        [self.pluginBackgroundView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_offset(0);
+        }];
+        
+        [self.view setNeedsUpdateConstraints];
+        [self.view updateConstraintsIfNeeded];
+        [UIView animateWithDuration:duration animations:^{
+            [self.view layoutIfNeeded];  // 如果约束有改变就更新布局
+        }];
+    }
+}
+
+/**
+ 扩展板-emoji、plugin的高度
+
+ @param height height
+ */
+- (void)pluginChangeHeight:(CGFloat)height
+{
     // 改变约束
-    [self.inputBarControl mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_offset(0);
+    [self.pluginBackgroundView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_offset(height);
     }];
     
     [self.view setNeedsUpdateConstraints];
     [self.view updateConstraintsIfNeeded];
-    [UIView animateWithDuration:duration animations:^{
+    [UIView animateWithDuration:kChatKeyboardAnimationDuration animations:^{
         [self.view layoutIfNeeded];  // 如果约束有改变就更新布局
     }];
-}
-
-- (void)inputModeDidChange:(NSNotification *)sender
-{
-    NSLog(@"输入法切换");
 }
 
 
@@ -197,6 +241,13 @@
     
 }
 
+#pragma mark - ChatTableViewDelegate
+
+- (void)clickTableView:(UITableView *)tableView
+{
+    [self endEditing];
+}
+
 #pragma mark - ChatSessionInputBarControlDelegate
 
 - (void)inputBarControl:(ChatSessionInputBarControl *)bar clickSend:(NSString *)text
@@ -214,56 +265,26 @@
 
 - (void)openPluginKeyboardWithInputBarControl:(ChatSessionInputBarControl *)bar
 {
-    if (self.chatSessionInputBarControl.inputTextView.inputView && self.isShowPluginKeyboard)
-    {
-        self.chatSessionInputBarControl.inputTextView.inputView = nil;
-        [self.chatSessionInputBarControl.inputTextView becomeFirstResponder];
-        
-        self.isShowPluginKeyboard = NO;
-        self.isShowEmojiKeyboard = NO;
-    }
-    else
-    {
-        self.chatSessionInputBarControl.inputTextView.inputView = self.pluginKeyboard;
-        [self.chatSessionInputBarControl.inputTextView becomeFirstResponder];
-        
-        self.isShowPluginKeyboard = YES;
-        self.isShowEmojiKeyboard = NO;
-    }
+    [self.pluginBackgroundView bringSubviewToFront:self.pluginKeyboard];
+    self.isShowPluginKeyboard = YES;
+    [bar.inputTextView resignFirstResponder];
+    // frame
+    [self pluginChangeHeight:kChatEmojiKeyboardHeight];
 }
 
 - (void)openEmojiKeyboardWithInputBarControl:(ChatSessionInputBarControl *)bar
 {
-    if (self.chatSessionInputBarControl.inputTextView.inputView && self.isShowEmojiKeyboard)
-    {
-        self.chatSessionInputBarControl.inputTextView.inputView = nil;
-        [self.chatSessionInputBarControl.inputTextView becomeFirstResponder];
-        
-        self.isShowPluginKeyboard = NO;
-        self.isShowEmojiKeyboard = NO;
-    }
-    else
-    {
-        self.chatSessionInputBarControl.inputTextView.inputView = self.emojiKeyboard;
-        [self.chatSessionInputBarControl.inputTextView becomeFirstResponder];
-        
-        self.isShowPluginKeyboard = NO;
-        self.isShowEmojiKeyboard = YES;
-    }
+    [self.pluginBackgroundView bringSubviewToFront:self.emojiKeyboard];
+    self.isShowEmojiKeyboard = YES;
+    [bar.inputTextView resignFirstResponder];
+    // frame
+    [self pluginChangeHeight:kChatEmojiKeyboardHeight];
 }
 
 - (void)openSystemKeyboardWithInputBarControl:(ChatSessionInputBarControl *)bar
 {
     // 显示系统键盘
-    if (self.chatSessionInputBarControl.inputTextView.inputView)
-    {
-        self.chatSessionInputBarControl.inputTextView.inputView = nil;
-    }
-    
-    if (![self.chatSessionInputBarControl.inputTextView isFirstResponder])
-    {
-        [self.chatSessionInputBarControl.inputTextView becomeFirstResponder];
-    }
+    [self.chatSessionInputBarControl.inputTextView becomeFirstResponder];
 }
 
 #pragma mark - ChatEmojiBoardViewDelegate
@@ -283,6 +304,22 @@
 - (ChatSessionInputBarControl *)chatSessionInputBarControl
 {
     return self.inputBarControl;
+}
+
+- (void)endEditing
+{
+    if (self.isShowEmojiKeyboard || self.isShowPluginKeyboard)
+    {
+        [self pluginChangeHeight:0];
+    }
+    
+    self.isShowEmojiKeyboard = NO;
+    self.isShowPluginKeyboard = NO;
+    
+    if ([self.inputBarControl.inputTextView isFirstResponder])
+    {
+        [self.view endEditing:YES];
+    }
 }
 
 #pragma mark - 内存管理

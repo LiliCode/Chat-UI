@@ -166,7 +166,6 @@ static CGFloat kTextViewBottom = 8.0f;
 
 - (void)openPlugin:(UIButton *)sender
 {
-    [self.textView resignFirstResponder];
     if ([self.delegate respondsToSelector:@selector(openPluginKeyboardWithInputBarControl:)])
     {
         [self.delegate openPluginKeyboardWithInputBarControl:self];
@@ -177,7 +176,6 @@ static CGFloat kTextViewBottom = 8.0f;
 
 - (void)openEmoji:(UIButton *)sender
 {
-    [self.textView resignFirstResponder];
     if ([self.delegate respondsToSelector:@selector(openEmojiKeyboardWithInputBarControl:)])
     {
         [self.delegate openEmojiKeyboardWithInputBarControl:self];
@@ -188,7 +186,6 @@ static CGFloat kTextViewBottom = 8.0f;
 
 - (void)penAction:(UIButton *)sender
 {
-    [self.textView resignFirstResponder];
     if ([self.delegate respondsToSelector:@selector(openSystemKeyboardWithInputBarControl:)])
     {
         [self.delegate openSystemKeyboardWithInputBarControl:self];
