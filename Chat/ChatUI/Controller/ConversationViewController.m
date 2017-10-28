@@ -130,9 +130,12 @@
     
     [self.pluginKeyboard insertPluginItem:photoLibItem];
     [self.pluginKeyboard insertPluginItem:cameraItem];
-    [self.pluginKeyboard reloadPlugins];
     
-    
+    // 添加手势 - window
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endEditing)];
+    tap.numberOfTapsRequired = 1;
+    tap.cancelsTouchesInView = NO;
+    [self.conversationTableView addGestureRecognizer:tap];
     
     
     [self.tableView setTableFooterView:[UIView new]];
@@ -256,6 +259,8 @@
     [self.messageList addObject:text];
     [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.messageList.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
     
+    // 滚动
+    [self scrollToBottomAnimated:YES];
 }
 
 - (void)inputBarControl:(ChatSessionInputBarControl *)bar didSelectPlugin:(NSInteger)index
@@ -306,6 +311,8 @@
     return self.inputBarControl;
 }
 
+#pragma mark - 公共方法、暴露的接口方法
+
 - (void)endEditing
 {
     if (self.isShowEmojiKeyboard || self.isShowPluginKeyboard)
@@ -319,6 +326,16 @@
     if ([self.inputBarControl.inputTextView isFirstResponder])
     {
         [self.view endEditing:YES];
+    }
+}
+
+- (void)scrollToBottomAnimated:(BOOL)animated
+{
+    CGFloat yOffset = 0; //设置要滚动的位置 0最顶部 CGFLOAT_MAX最底部
+    if (self.conversationTableView.contentSize.height > self.conversationTableView.bounds.size.height - 64)
+    {
+        yOffset = self.conversationTableView.contentSize.height - self.conversationTableView.bounds.size.height + 64;
+        [self.conversationTableView setContentOffset:CGPointMake(0, yOffset) animated:animated];
     }
 }
 

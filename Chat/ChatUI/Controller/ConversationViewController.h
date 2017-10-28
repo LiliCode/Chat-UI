@@ -10,11 +10,22 @@
 #import "ChatSessionInputBarControl.h"
 
 @interface ConversationViewController : UIViewController
+/** 会话人id,targetId */
+@property (copy , nonatomic) NSString *targetId;
 /** 回话页面视图 - 消息展示视图*/
-@property (strong, nonatomic, readonly) UITableView *tableView;
+@property (strong , nonatomic, readonly) UITableView *tableView;
 /** 聊天会话-输入视图 */
-@property (strong, nonatomic) ChatSessionInputBarControl *chatSessionInputBarControl;
+@property (strong , nonatomic) ChatSessionInputBarControl *chatSessionInputBarControl;
 
+
+
+
+/*!
+ 滚动到列表最下方
+ 
+ @param animated 是否开启动画效果
+ */
+- (void)scrollToBottomAnimated:(BOOL)animated;
 
 /**
  停止编辑

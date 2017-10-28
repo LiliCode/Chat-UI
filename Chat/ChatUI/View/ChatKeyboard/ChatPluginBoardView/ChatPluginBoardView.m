@@ -86,6 +86,14 @@ const NSInteger kChatPluginNumberOfCols = 5;
 - (void)insertPluginItem:(PluginItem *)item
 {
     [self.pluginList addObject:item];
+    if (self.pluginList.count == 1 || [self.collectionView numberOfItemsInSection:0] == self.pluginList.count)
+    {
+        [self.collectionView reloadData];
+    }
+    else
+    {
+        [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.pluginList.count inSection:0]]];
+    }
 }
 
 - (void)reloadPlugins
