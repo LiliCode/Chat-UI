@@ -24,8 +24,8 @@ typedef NS_ENUM(NSUInteger, MessageType)
 /**
  消息方向-接受方还是发送方
  
- - MessageDirection_send: 消息发送方
- - MessageDirection_received: 消息接受方
+ - MessageDirection_send: 消息发送方(我发出的消息)
+ - MessageDirection_received: 消息接受方（我接收到的消息）
  */
 typedef NS_ENUM(NSUInteger, MessageDirection)
 {

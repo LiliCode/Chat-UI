@@ -21,11 +21,6 @@
     
 }
 
-- (IBAction)endEdit:(UIBarButtonItem *)sender
-{
-    [self endEditing];
-}
-
 
 - (void)didReceiveMemoryWarning
 {

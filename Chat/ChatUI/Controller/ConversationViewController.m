@@ -11,6 +11,7 @@
 #import "ChatPluginBoardView.h"
 #import "ChatEmojiBoardView.h"
 #import "UIView+ChatFrame.h"
+#import "MessageBaseCell.h"
 #import <Masonry.h>
 
 
@@ -139,7 +140,7 @@
     
     
     [self.tableView setTableFooterView:[UIView new]];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [self.tableView registerClass:[MessageBaseCell class] forCellReuseIdentifier:@"Cell"];
     
 }
 
@@ -224,15 +225,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50 + UITableViewAutomaticDimension;
+//    return 50 + UITableViewAutomaticDimension;
+    return 100.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = [self.messageList objectAtIndex:indexPath.row];
+    MessageBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+//    cell.textLabel.numberOfLines = 0;
+//    cell.textLabel.text = [self.messageList objectAtIndex:indexPath.row];
     
     return cell;
 }
