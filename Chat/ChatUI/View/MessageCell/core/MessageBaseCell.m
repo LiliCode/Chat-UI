@@ -8,7 +8,6 @@
 
 #import "MessageBaseCell.h"
 #import <Masonry.h>
-#import "ChatUI.h"
 
 /** msg content view 最大宽度 */
 static const CGFloat kCellMessageContentViewMaxWidth = 250.0f;

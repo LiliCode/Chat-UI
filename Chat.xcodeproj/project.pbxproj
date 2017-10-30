@@ -376,9 +376,9 @@
 		22FB67251F7F4E03007A4888 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22FB67371F7F7375007A4888 /* MessageCommon.h */,
 				22EBF0A91FA6F53D00E6AD14 /* ChatUI.h */,
 				22EBF0AA1FA6F53D00E6AD14 /* ChatUI.m */,
-				22FB67371F7F7375007A4888 /* MessageCommon.h */,
 				22FB67311F7F6D64007A4888 /* Message.h */,
 				22FB67321F7F6D64007A4888 /* Message.m */,
 				22FB672E1F7F688C007A4888 /* MessageContentItem.h */,

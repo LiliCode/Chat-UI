@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Message.h"
+#import "ChatUI.h"
 
 @interface MessageBaseCell : UITableViewCell
 /** 头像 - logo*/

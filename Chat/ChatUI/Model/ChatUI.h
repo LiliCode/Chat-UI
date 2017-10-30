@@ -8,19 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CGGeometry.h>
+#import <UIKit/UIFont.h>
+#import <UIKit/UIColor.h>
 
 /*!
  头像显示的形状
  */
 typedef NS_ENUM(NSInteger, UserAvatarStyle)
 {
-    /*!
-     矩形
-     */
+    /*! 矩形 */
     USER_AVATAR_RECTANGLE = 0,
-    /*!
-     圆形
-     */
+    /*! 圆形 */
     USER_AVATAR_CYCLE
 };
 
@@ -57,6 +55,21 @@ typedef NS_ENUM(NSInteger, UserAvatarStyle)
  @discussion 默认值为4，只有当头像形状设置为矩形时才会生效。
  */
 @property(nonatomic) CGFloat portraitImageViewCornerRadius;
+
+/**
+ 全局消息字体
+ 
+ @discussion 默认字体大小14 systemFont
+ */
+@property (strong, nonatomic) UIFont *globalMessageTextFont;
+
+/**
+ 全局消息的颜色
+ 
+ @discussion 默认颜色黑色
+ */
+@property (strong, nonatomic) UIColor *globalMessageTextColor;
+
 
 
 /**

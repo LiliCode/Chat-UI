@@ -5,6 +5,20 @@
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 21,
+          "top" : 58,
+          "right" : 69,
+          "left" : 24
+        }
+      },
       "idiom" : "universal",
       "filename" : "chat_from_bg_normal@2x.png",
       "scale" : "2x"

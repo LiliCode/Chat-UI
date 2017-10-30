@@ -11,7 +11,7 @@
 #import "ChatPluginBoardView.h"
 #import "ChatEmojiBoardView.h"
 #import "UIView+ChatFrame.h"
-#import "MessageBaseCell.h"
+#import "MessageTextCell.h"
 #import <Masonry.h>
 
 
@@ -140,7 +140,7 @@
     
     
     [self.tableView setTableFooterView:[UIView new]];
-    [self.tableView registerClass:[MessageBaseCell class] forCellReuseIdentifier:@"Cell"];
+    [self.tableView registerClass:[MessageTextCell class] forCellReuseIdentifier:@"Cell"];
     
 }
 
@@ -231,7 +231,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MessageBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MessageTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 //    cell.textLabel.numberOfLines = 0;
 //    cell.textLabel.text = [self.messageList objectAtIndex:indexPath.row];
     

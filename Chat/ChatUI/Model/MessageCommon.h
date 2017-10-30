@@ -43,5 +43,16 @@ typedef NS_ENUM(NSUInteger, MessageDirection)
 #define kInputControl_PenButtonNormal @"icon_inport_def"
 #define kInputControl_PenButtonHighlighted @"icon_inport_def pre"
 
+#define kMessageCell_BubbleImageSend @"chat_to_bg_normal"
+#define kMessageCell_BubbleImageReceived @"chat_from_bg_normal"
+
+
 
 #endif /* _MESSAGE_COMMON_H_ */
+
+
+
+
+
+
+
