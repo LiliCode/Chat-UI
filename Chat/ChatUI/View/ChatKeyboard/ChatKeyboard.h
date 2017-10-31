@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIColor+ChatUI.h"
 
 UIKIT_EXTERN const CGFloat kChatKeyboardAnimationDuration;
 

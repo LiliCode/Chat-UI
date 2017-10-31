@@ -65,13 +65,15 @@ static NSString * const kCellIdef = @"Cell";
 
 - (void)prepareUI
 {
+    self.backgroundColor = rgbColor(244.0f, 244.0f, 246.0f, 1);
+    
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
     self.emojiCollectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
     self.emojiCollectionView.dataSource = self;
     self.emojiCollectionView.delegate = self;
-    self.emojiCollectionView.backgroundColor = [UIColor whiteColor];
+    self.emojiCollectionView.backgroundColor = [UIColor clearColor];
     
     [self addSubview:self.emojiCollectionView];
     [self.emojiCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {

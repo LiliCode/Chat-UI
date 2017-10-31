@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--会话列表-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJn-TJ-sHg">
-                                <rect key="frame" x="122" y="269" width="76" height="30"/>
+                                <rect key="frame" x="122" y="237" width="76" height="30"/>
                                 <state key="normal" title="Chat Room"/>
                                 <connections>
                                     <segue destination="fqv-Uu-CAI" kind="show" id="cfP-v6-yWS"/>
@@ -35,13 +35,14 @@
                             <constraint firstItem="EJn-TJ-sHg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hvU-3k-UoW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Uc7-q4-gZl"/>
+                    <navigationItem key="navigationItem" title="会话列表" id="Yck-WH-ks2"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="894" y="446"/>
         </scene>
-        <!--会话页面-->
+        <!--会飞的鱼-->
         <scene sceneID="SLo-uQ-si6">
             <objects>
                 <viewController id="fqv-Uu-CAI" customClass="ChatViewController" sceneMemberID="viewController">
@@ -50,11 +51,11 @@
                         <viewControllerLayoutGuide type="bottom" id="cjy-Ug-gm2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8fW-Ch-JGH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" title="会话页面" id="b2A-WB-jXc"/>
+                    <navigationItem key="navigationItem" title="会飞的鱼" id="b2A-WB-jXc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MyA-Ca-cb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,7 +66,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DK3-bX-tzO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0mq-Zw-NtK">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="0mq-Zw-NtK">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

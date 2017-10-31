@@ -10,4 +10,9 @@
 
 @implementation MessageContent
 
+- (CGSize)getMessageContentSize
+{
+    return CGSizeZero;  //  派生类重写此方法
+}
+
 @end

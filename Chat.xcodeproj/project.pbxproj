@@ -20,6 +20,7 @@
 		2277C2531FA05A440060478F /* ChatEmojiIItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277C24E1FA05A440060478F /* ChatEmojiIItem.m */; };
 		2277C2541FA05A440060478F /* ChatEmojiBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277C24F1FA05A440060478F /* ChatEmojiBoardView.m */; };
 		227ED72F1FA886F20025FF26 /* NSString+ChatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 227ED72E1FA886F20025FF26 /* NSString+ChatUI.m */; };
+		227ED7321FA8BE340025FF26 /* UIColor+ChatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 227ED7311FA8BE340025FF26 /* UIColor+ChatUI.m */; };
 		22B4DCB91FA1934F00EDE246 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B4DCB81FA1934F00EDE246 /* ChatViewController.m */; };
 		22EBF05B1FA6B7E500E6AD14 /* EmojiItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EBF0591FA6B7E500E6AD14 /* EmojiItem.m */; };
 		22EBF05F1FA6B7EE00E6AD14 /* PluginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EBF05D1FA6B7EE00E6AD14 /* PluginItem.m */; };
@@ -109,6 +110,8 @@
 		2277C2501FA05A440060478F /* ChatEmojiIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatEmojiIItem.h; sourceTree = "<group>"; };
 		227ED72D1FA886F20025FF26 /* NSString+ChatUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ChatUI.h"; sourceTree = "<group>"; };
 		227ED72E1FA886F20025FF26 /* NSString+ChatUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+ChatUI.m"; sourceTree = "<group>"; };
+		227ED7301FA8BE340025FF26 /* UIColor+ChatUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ChatUI.h"; sourceTree = "<group>"; };
+		227ED7311FA8BE340025FF26 /* UIColor+ChatUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ChatUI.m"; sourceTree = "<group>"; };
 		22B4DCB71FA1934F00EDE246 /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		22B4DCB81FA1934F00EDE246 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		22EBF0591FA6B7E500E6AD14 /* EmojiItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiItem.m; sourceTree = "<group>"; };
@@ -457,6 +460,8 @@
 				22FB674F1F7F8CD4007A4888 /* UIView+ChatFrame.m */,
 				227ED72D1FA886F20025FF26 /* NSString+ChatUI.h */,
 				227ED72E1FA886F20025FF26 /* NSString+ChatUI.m */,
+				227ED7301FA8BE340025FF26 /* UIColor+ChatUI.h */,
+				227ED7311FA8BE340025FF26 /* UIColor+ChatUI.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -842,6 +847,7 @@
 				22EBF05B1FA6B7E500E6AD14 /* EmojiItem.m in Sources */,
 				2277C2531FA05A440060478F /* ChatEmojiIItem.m in Sources */,
 				22FB67431F7F7EA0007A4888 /* ChatSessionInputBarControl.m in Sources */,
+				227ED7321FA8BE340025FF26 /* UIColor+ChatUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

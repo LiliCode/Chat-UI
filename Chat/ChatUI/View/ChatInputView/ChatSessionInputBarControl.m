@@ -8,6 +8,7 @@
 
 #import "ChatSessionInputBarControl.h"
 #import "MessageCommon.h"
+#import "UIColor+ChatUI.h"
 #import <Masonry.h>
 
 const CGFloat kChatInputBarContentHeight = 50.0f;
@@ -52,8 +53,8 @@ static CGFloat kTextViewBottom = 8.0f;
 
 - (void)prepare
 {
-    // UI
-    self.backgroundColor = [UIColor colorWithRed:250.0f/255.0f green:250.0f/255.0f blue:250.0f/255.0f alpha:1];
+    // UI - #F4F4F6
+    self.backgroundColor = rgbColor(244.0f, 244.0f, 246.0f, 1);
     
     // 插件入口 plugin
     UIButton *pluginButton = [[UIButton alloc] init];

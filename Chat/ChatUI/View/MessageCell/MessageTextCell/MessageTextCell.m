@@ -75,9 +75,8 @@
     
     // text label size
     TextMessageContent *textContent = (TextMessageContent *)self.messageModel.messageContent;
-    CGSize size = [textContent getMessageContentSize];
     [self.messageContentView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(size.width);
+        make.width.mas_equalTo(textContent.contentSize.width);
     }];
 }
 

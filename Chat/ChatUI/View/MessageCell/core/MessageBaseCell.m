@@ -50,8 +50,9 @@
 
 - (void)prepare
 {
-#pragma mark - cell的风格设置
+#pragma mark - 风格设置
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.backgroundColor = [UIColor clearColor];
 #pragma mark - 添加消息Cell最基本的视图
     // 头像
     self.pLogoImageView = [[UIImageView alloc] init];

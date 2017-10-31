@@ -24,6 +24,8 @@
 @interface MessageContent : NSObject<MessageContentDelegate>
 /** 消息类型名称 - 派生类需要重写getter方法 */
 @property (copy, nonatomic, readonly) NSString *objectName;
+/** 消息尺寸：文本消息动态计算 */
+@property (assign, nonatomic) CGSize contentSize;
 
 
 

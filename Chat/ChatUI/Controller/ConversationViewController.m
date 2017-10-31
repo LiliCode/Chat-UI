@@ -11,6 +11,7 @@
 #import "ChatPluginBoardView.h"
 #import "ChatEmojiBoardView.h"
 #import "UIView+ChatFrame.h"
+#import "UIColor+ChatUI.h"
 #import "MessageTextCell.h"
 #import <Masonry.h>
 
@@ -41,8 +42,6 @@
     
     self.automaticallyAdjustsScrollViewInsets = YES;
     
-//    self.tableView.estimatedRowHeight = 50.0f;
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.messageList = [[NSMutableArray alloc] init];
     
     [self prepare];
@@ -138,7 +137,7 @@
     tap.cancelsTouchesInView = NO;
     [self.conversationTableView addGestureRecognizer:tap];
     
-    
+    self.conversationTableView.backgroundColor = rgbColor(235.0f, 235.0f, 235.0f, 1);
     [self.tableView setTableFooterView:[UIView new]];
     [self.tableView registerClass:[MessageTextCell class] forCellReuseIdentifier:@"Cell"];
     
@@ -228,8 +227,7 @@
 //    return 50 + UITableViewAutomaticDimension;
 //    return 100.0f;
     Message *m = [self.messageList objectAtIndex:indexPath.row];
-    CGSize size = [m.messageContent getMessageContentSize];
-    return size.height;
+    return m.messageContent.contentSize.height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

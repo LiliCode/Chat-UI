@@ -7,6 +7,7 @@
 //
 
 #import "ChatKeyboard.h"
+#import <Masonry.h>
 
 const CGFloat kChatKeyboardAnimationDuration = 0.25;
 
@@ -16,11 +17,29 @@ const CGFloat kChatKeyboardAnimationDuration = 0.25;
 
 @implementation ChatKeyboard
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    [self drawLine];
+}
+
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        [self drawLine];
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithTextView:(UITextView *)textView
 {
     if (self = [super init])
     {
         self.textView = textView;
+        [self drawLine];
     }
     
     return self;
@@ -31,10 +50,29 @@ const CGFloat kChatKeyboardAnimationDuration = 0.25;
     if (self = [super init])
     {
         self.textField = textField;
+        [self drawLine];
     }
     
     return self;
 }
 
+- (void)drawLine
+{
+    // line
+    UIView *lineView = [[UIView alloc] init];
+    lineView.backgroundColor = rgbColor(220, 220, 221, 1);
+    [self addSubview:lineView];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_offset(0);
+        make.left.mas_offset(0);
+        make.right.mas_offset(0);
+        make.height.mas_offset(0.3);
+    }];
+}
+
 
 @end
+
+
+
+

@@ -50,7 +50,7 @@ const NSInteger kChatPluginNumberOfCols = 5;
 
 - (void)prepareUI
 {
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = rgbColor(244.0f, 244.0f, 246.0f, 1);
     
     // collection
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -59,7 +59,7 @@ const NSInteger kChatPluginNumberOfCols = 5;
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor clearColor];
     
     [self addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {

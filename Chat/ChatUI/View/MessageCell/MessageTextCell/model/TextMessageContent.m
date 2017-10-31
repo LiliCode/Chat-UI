@@ -28,7 +28,13 @@ static const CGFloat kMessageBubbleTopAndBottomMargin = 20.0f;
 @implementation TextMessageContent
 
 
-
+- (void)setText:(NSString *)text
+{
+    _text = text;
+    
+    // 计算尺寸
+    self.contentSize = [self getMessageContentSize];
+}
 
 - (CGSize)getMessageContentSize
 {
