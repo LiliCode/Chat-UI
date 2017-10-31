@@ -17,6 +17,14 @@
 @property (copy , nonatomic) NSString *userLogo;
 
 
+/**
+ 自定义构造方法
 
+ @param userId 用户id
+ @param name 名称
+ @param logo 头像
+ @return 返回 UserInfo
+ */
+- (instancetype)initWithUserId:(NSString *)userId withName:(NSString *)name withLogo:(NSString *)logo;
 
 @end

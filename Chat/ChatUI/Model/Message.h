@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UserInfo.h"
-#import "MessageContentItem.h"
+#import "MessageContent.h"
 #import "MessageCommon.h"
 
 /**
@@ -18,7 +18,7 @@
 /** 发送方用户信息 */
 @property (strong , nonatomic) UserInfo *senderUserInfo;
 /** 消息内容 */
-@property (strong , nonatomic) MessageContentItem *messageContent;
+@property (strong , nonatomic) MessageContent *messageContent;
 /** 目标id - 要发送给谁 */
 @property (copy , nonatomic) NSString *targetId;
 /** 发送者id */
@@ -36,7 +36,7 @@
  @param content 消息内容
  @return 返回已经初始化的消息对象
  */
-- (instancetype)initWithTargetId:(NSString *)targetId direction:(MessageDirection)direction content:(MessageContentItem *)content;
+- (instancetype)initWithTargetId:(NSString *)targetId direction:(MessageDirection)direction content:(MessageContent *)content;
 
 @end
 

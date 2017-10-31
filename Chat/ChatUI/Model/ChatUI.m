@@ -22,8 +22,9 @@ static ChatUI *chatui = nil;
         chatui.globalMessagePortraitSize = CGSizeMake(40, 40);
         chatui.globalConversationPortraitSize = CGSizeMake(46, 46);
         chatui.portraitImageViewCornerRadius = 4.0f;
-        chatui.globalMessageTextFont = [UIFont systemFontOfSize:14.0f];
+        chatui.globalMessageTextFont = [UIFont systemFontOfSize:16.0f];
         chatui.globalMessageTextColor = [UIColor blackColor];
+        chatui.globalMessageContentViewMaxWidth = 250.0f;
     });
     
     return chatui;

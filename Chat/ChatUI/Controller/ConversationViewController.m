@@ -41,8 +41,8 @@
     
     self.automaticallyAdjustsScrollViewInsets = YES;
     
-    self.tableView.estimatedRowHeight = 50.0f;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.estimatedRowHeight = 50.0f;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.messageList = [[NSMutableArray alloc] init];
     
     [self prepare];
@@ -226,12 +226,17 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    return 50 + UITableViewAutomaticDimension;
-    return 100.0f;
+//    return 100.0f;
+    Message *m = [self.messageList objectAtIndex:indexPath.row];
+    CGSize size = [m.messageContent getMessageContentSize];
+    return size.height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MessageTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    Message *msg = [self.messageList objectAtIndex:indexPath.row];
+    cell.messageModel = msg;
 //    cell.textLabel.numberOfLines = 0;
 //    cell.textLabel.text = [self.messageList objectAtIndex:indexPath.row];
     
@@ -257,9 +262,29 @@
 - (void)inputBarControl:(ChatSessionInputBarControl *)bar clickSend:(NSString *)text
 {
     NSLog(@"send: {\"text\":\"%@\"}", text);
-    [self.messageList addObject:text];
-    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.messageList.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
     
+    Message *messageItem = [[Message alloc] init];
+    TextMessageContent *textContent = [[TextMessageContent alloc] init];
+    textContent.text = text;
+    messageItem.messageContent = textContent;
+    messageItem.direction = self.messageList.count % 2;
+    UserInfo *user = [[UserInfo alloc] init];
+    if (messageItem.direction)
+    {
+        user.name = @"Lili";
+        user.userId = @"18281863522";
+        user.userLogo = @"avatar-1";
+    }
+    else
+    {
+        user.name = @"Donglinglai";
+        user.userId = @"17713582481";
+        user.userLogo = @"avatar-2";
+    }
+    messageItem.senderUserInfo = user;
+    
+    [self.messageList addObject:messageItem];
+    [self.tableView reloadData];
     // 滚动
     [self scrollToBottomAnimated:YES];
 }

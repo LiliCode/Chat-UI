@@ -70,6 +70,14 @@ typedef NS_ENUM(NSInteger, UserAvatarStyle)
  */
 @property (strong, nonatomic) UIColor *globalMessageTextColor;
 
+/**
+ 全局消息Cell最大宽度
+ 
+ @discussion 默认250.0f
+ */
+@property (assign, nonatomic) CGFloat globalMessageContentViewMaxWidth;
+
+
 
 
 /**

@@ -9,8 +9,7 @@
 #import "MessageBaseCell.h"
 #import <Masonry.h>
 
-/** msg content view 最大宽度 */
-static const CGFloat kCellMessageContentViewMaxWidth = 250.0f;
+
 
 @interface MessageBaseCell ()
 /** 头像 - logo*/
@@ -64,8 +63,10 @@ static const CGFloat kCellMessageContentViewMaxWidth = 250.0f;
     
     // ...
     // 其他的视图请在派生类中添加
+#if DEBUG
     self.pLogoImageView.backgroundColor = [UIColor redColor];
     self.pMessageContentView.backgroundColor = [UIColor greenColor];
+#endif
 }
 
 - (void)layoutMessage
@@ -86,7 +87,7 @@ static const CGFloat kCellMessageContentViewMaxWidth = 250.0f;
                 make.top.mas_offset(10);
                 make.right.equalTo(weakSelf.pLogoImageView.mas_left).offset(-10);
                 make.bottom.mas_offset(-10);
-                make.width.mas_offset(kCellMessageContentViewMaxWidth);
+                make.width.mas_offset([ChatUI sharedUI].globalMessageContentViewMaxWidth);
             }];
         } break;
         case MessageDirection_received: // 接收到的消息
@@ -102,7 +103,7 @@ static const CGFloat kCellMessageContentViewMaxWidth = 250.0f;
                 make.top.mas_offset(10);
                 make.left.equalTo(weakSelf.pLogoImageView.mas_right).offset(10);
                 make.bottom.mas_offset(-10);
-                make.width.mas_offset(kCellMessageContentViewMaxWidth);
+                make.width.mas_offset([ChatUI sharedUI].globalMessageContentViewMaxWidth);
             }];
         } break;
             

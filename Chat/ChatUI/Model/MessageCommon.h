@@ -9,6 +9,10 @@
 #ifndef _MESSAGE_COMMON_H_
 #define _MESSAGE_COMMON_H_
 
+
+#define DEBUG (0)   // 开启调试：1
+
+
 /**
  消息类型
  

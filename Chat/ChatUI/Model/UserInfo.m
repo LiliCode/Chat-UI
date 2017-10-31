@@ -10,4 +10,16 @@
 
 @implementation UserInfo
 
+- (instancetype)initWithUserId:(NSString *)userId withName:(NSString *)name withLogo:(NSString *)logo
+{
+    if (self = [super init])
+    {
+        self.userId = userId;
+        self.name = name;
+        self.userLogo = logo;
+    }
+    
+    return self;
+}
+
 @end

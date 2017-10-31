@@ -10,7 +10,7 @@
 
 @implementation Message
 
-- (instancetype)initWithTargetId:(NSString *)targetId direction:(MessageDirection)direction content:(MessageContentItem *)content
+- (instancetype)initWithTargetId:(NSString *)targetId direction:(MessageDirection)direction content:(MessageContent *)content
 {
     if (self = [super init])
     {

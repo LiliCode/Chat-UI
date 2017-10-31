@@ -7,6 +7,7 @@
 //
 
 #import "MessageBaseCell.h"
+#import "TextMessageContent.h"
 
 @interface MessageTextCell : MessageBaseCell
 

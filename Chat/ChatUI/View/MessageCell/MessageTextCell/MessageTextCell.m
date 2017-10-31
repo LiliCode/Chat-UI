@@ -9,6 +9,7 @@
 #import "MessageTextCell.h"
 #import <Masonry.h>
 
+
 @interface MessageTextCell ()
 /** 气泡图片 */
 @property (strong , nonatomic) UIImageView *bubbleImageView;
@@ -31,8 +32,10 @@
     self.label.numberOfLines = 0;   // 多行
     self.label.font = [ChatUI sharedUI].globalMessageTextFont;
     self.label.textColor = [ChatUI sharedUI].globalMessageTextColor;
-    self.label.backgroundColor = [UIColor grayColor];
     [self.messageContentView addSubview:self.label];
+#if DEBUG
+    self.label.backgroundColor = [UIColor grayColor];
+#endif
 }
 
 - (void)layoutMessage
@@ -44,19 +47,19 @@
         case MessageDirection_send:
             self.bubbleImageView.image = [UIImage imageNamed:kMessageCell_BubbleImageSend];
             [self.label mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_offset(8);
-                make.left.mas_offset(8);
-                make.bottom.mas_offset(-8);
-                make.right.mas_offset(-16);
+                make.top.mas_offset(5);
+                make.left.mas_offset(5);
+                make.bottom.mas_offset(-5);
+                make.right.mas_offset(-12);
             }];
             break;
         case MessageDirection_received:
             self.bubbleImageView.image = [UIImage imageNamed:kMessageCell_BubbleImageReceived];
             [self.label mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_offset(8);
-                make.left.mas_offset(16);
-                make.bottom.mas_offset(-8);
-                make.right.mas_offset(-8);
+                make.top.mas_offset(5);
+                make.left.mas_offset(12);
+                make.bottom.mas_offset(-5);
+                make.right.mas_offset(-5);
             }];
             break;
             
@@ -69,9 +72,23 @@
         make.bottom.mas_offset(0);
         make.right.mas_offset(0);
     }];
+    
+    // text label size
+    TextMessageContent *textContent = (TextMessageContent *)self.messageModel.messageContent;
+    CGSize size = [textContent getMessageContentSize];
+    [self.messageContentView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(size.width);
+    }];
 }
 
-
+- (void)setMessageModel:(Message *)messageModel
+{
+    [super setMessageModel:messageModel];
+    
+    TextMessageContent *textContent = (TextMessageContent *)messageModel.messageContent;
+    self.label.text = textContent.text;
+    self.logoImageView.image = [UIImage imageNamed:messageModel.senderUserInfo.userLogo];
+}
 
 
 
