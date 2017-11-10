@@ -93,8 +93,10 @@
     [self.chatSessionInputBarControl insertPluginItem:cameraPluginItem];
     
     // 注册消息
+    // text
     [self registerClass:[ChatMessageTextCell class] forMessageClass:[ChatTextMessageContent class]];
-    
+    // image
+    [self registerClass:[ChatMessageImageCell class] forMessageClass:[ChatImageMessageContent class]];
     
     
     
@@ -129,7 +131,7 @@
     // 用消息类在注册表中找到相应的Cell类名称
     NSString *cellClassName = [self.registerCellTable objectForKey:NSStringFromClass([msg.messageContent class])];
     Class cellClass = NSClassFromString(cellClassName);
-    ChatMessageTextCell *cell = [tableView dequeueReusableCellWithIdentifier:cellClassName forIndexPath:indexPath];
+    ChatMessageBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:cellClassName forIndexPath:indexPath];
     if (!cell)
     {
         cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellClassName];
