@@ -7,12 +7,32 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChatPluginBoardView.h"
+#import "ChatEmojiBoardView.h"
 
 
 FOUNDATION_EXTERN CGFloat const kChatInputBarContentHeight;
 
 
+/**
+ 扩展板的显示类型
+
+ - ChatFunctionViewShowTypeNothing: 不显示扩展板
+ - ChatFunctionViewShowTypeEmoji: Emoji扩展板
+ - ChatFunctionViewShowTypePlugin: Plugin扩展板
+ - ChatFunctionViewShowTypeKeyboard: 显示键盘
+ */
+typedef NS_ENUM(NSUInteger, ChatFunctionViewShowType)
+{
+    ChatFunctionViewShowTypeNothing,
+    ChatFunctionViewShowTypeEmoji,
+    ChatFunctionViewShowTypePlugin,
+    ChatFunctionViewShowTypeKeyboard
+};
+
+@class ChatPluginItem;
 @class ChatSessionInputBarControl;
+
 @protocol ChatSessionInputBarControlDelegate <NSObject>
 @optional
 
@@ -64,8 +84,31 @@ FOUNDATION_EXTERN CGFloat const kChatInputBarContentHeight;
 @property (strong , nonatomic , readonly) UITextView *inputTextView;
 /** 文本 */
 @property (copy , nonatomic) NSString *text;
+/** 扩展板类型 */
+@property (assign , nonatomic , readonly) ChatFunctionViewShowType functionKeyboardType;
+/** 输入视图最大高度 */
+@property (assign , nonatomic) CGFloat inputBarMaxHeight;
 /** 代理对象 */
 @property (weak , nonatomic) id<ChatSessionInputBarControlDelegate> delegate;
+
+
+
+/**
+ 开始输入文本
+ */
+- (void)beginInputing;
+
+/**
+ 结束输入文本
+ */
+- (void)endInputing;
+
+/**
+ 添加扩展插件
+
+ @param item ChatPluginItem - {例如：图片、相机、位置...}
+ */
+- (void)insertPluginItem:(ChatPluginItem *)item;
 
 
 @end

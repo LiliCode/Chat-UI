@@ -18,13 +18,14 @@ static ChatUI *chatui = nil;
     dispatch_once(&onceToken, ^{
         chatui = [[self alloc] init];
         // 初始化
-        chatui.globalMessageAvatarStyle = USER_AVATAR_RECTANGLE;
+        chatui.globalMessageAvatarStyle = ChatUserAvatarStyleRectangle;
         chatui.globalMessagePortraitSize = CGSizeMake(40, 40);
         chatui.globalConversationPortraitSize = CGSizeMake(46, 46);
         chatui.portraitImageViewCornerRadius = 4.0f;
         chatui.globalMessageTextFont = [UIFont systemFontOfSize:16.0f];
         chatui.globalMessageTextColor = [UIColor blackColor];
         chatui.globalMessageContentViewMaxWidth = 250.0f;
+        chatui.globalMessageImageSize = CGSizeMake(150.0f, 150.0f);
     });
     
     return chatui;

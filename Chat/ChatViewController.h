@@ -6,9 +6,9 @@
 //  Copyright © 2017年 李立. All rights reserved.
 //
 
-#import "ConversationViewController.h"
+#import "ChatConversationViewController.h"
 
-@interface ChatViewController : ConversationViewController
+@interface ChatViewController : ChatConversationViewController
 
 @end
 

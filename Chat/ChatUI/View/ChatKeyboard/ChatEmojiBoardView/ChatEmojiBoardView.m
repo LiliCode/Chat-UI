@@ -7,10 +7,11 @@
 //
 
 #import "ChatEmojiBoardView.h"
-#import "ChatEmojiIItem.h"
+#import "ChatEmojiItemCell.h"
 #import <Masonry.h>
 
 const CGFloat kChatEmojiKeyboardHeight = 200.0f;
+const CGFloat kChatEmojiKeyboardAnimationDuration = 0.25f;
 const NSInteger kChatEmojiNumberOfCols = 8;
 
 static NSString * const kCellIdef = @"Cell";
@@ -19,7 +20,7 @@ static NSString * const kCellIdef = @"Cell";
 
 @interface ChatEmojiBoardView ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (strong , nonatomic) UICollectionView *emojiCollectionView;
-@property (strong , nonatomic) NSArray <EmojiItem *>*emojis;
+@property (strong , nonatomic) NSArray <ChatEmojiItem *>*emojis;
 
 @end
 
@@ -83,14 +84,14 @@ static NSString * const kCellIdef = @"Cell";
         make.bottom.mas_equalTo(0);
     }];
     
-    [self.emojiCollectionView registerClass:[ChatEmojiIItem class] forCellWithReuseIdentifier:kCellIdef];
+    [self.emojiCollectionView registerClass:[ChatEmojiItemCell class] forCellWithReuseIdentifier:kCellIdef];
     
     // 获取emoji
     [self.class getSystemEmojis:^(NSArray *emojis) {
         NSMutableArray *mEmojis = [[NSMutableArray alloc] init];
         for (NSString *eString in emojis)
         {
-            EmojiItem *item = [EmojiItem emojiWithEncode:eString type:EmojiItemType_emoji];
+            ChatEmojiItem *item = [ChatEmojiItem emojiWithEncode:eString type:ChatEmojiItemTypeEmoji];
             [mEmojis addObject:item];
         }
         
@@ -114,9 +115,9 @@ static NSString * const kCellIdef = @"Cell";
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    ChatEmojiIItem *item = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdef forIndexPath:indexPath];
+    ChatEmojiItemCell *item = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdef forIndexPath:indexPath];
     
-    EmojiItem *itemModel = [self.emojis objectAtIndex:indexPath.row];
+    ChatEmojiItem *itemModel = [self.emojis objectAtIndex:indexPath.row];
     item.label.text = itemModel.emojiEncode;
     
     return item;
@@ -127,7 +128,7 @@ static NSString * const kCellIdef = @"Cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    EmojiItem *item = [self.emojis objectAtIndex:indexPath.row];
+    ChatEmojiItem *item = [self.emojis objectAtIndex:indexPath.row];
     
     if (self.textView)
     {

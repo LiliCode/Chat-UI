@@ -7,7 +7,7 @@
 //
 
 #import "ChatPluginBoardView.h"
-#import "ChatPluginItem.h"
+#import "ChatPluginItemCell.h"
 #import <Masonry.h>
 
 NSString * const kChatPluginKeyboardWillShowNotification = @"kChatPluginKeyboardWillShowNotification";
@@ -16,6 +16,7 @@ NSString * const kChatPluginKeyboardDidShowNotification = @"kChatPluginKeyboardD
 NSString * const kChatPluginKeyboardDidHideNotification = @"kChatPluginKeyboardDidHideNotification";
 
 const CGFloat kChatPluginKeyboardHeight = 200.0f;
+const CGFloat kChatPluginKeyboardAnimationDuration = 0.25f;
 
 
 static NSString * const kCellIdef = @"Cell";
@@ -69,7 +70,7 @@ const NSInteger kChatPluginNumberOfCols = 5;
         make.bottom.mas_equalTo(0);
     }];
     // 注册cell
-    [self.collectionView registerClass:[ChatPluginItem class] forCellWithReuseIdentifier:kCellIdef];
+    [self.collectionView registerClass:[ChatPluginItemCell class] forCellWithReuseIdentifier:kCellIdef];
 }
 
 - (NSMutableArray *)pluginList
@@ -83,7 +84,7 @@ const NSInteger kChatPluginNumberOfCols = 5;
 }
 
 
-- (void)insertPluginItem:(PluginItem *)item
+- (void)insertPluginItem:(ChatPluginItem *)item
 {
     [self.pluginList addObject:item];
     if (self.pluginList.count == 1 || [self.collectionView numberOfItemsInSection:0] == self.pluginList.count)
@@ -116,9 +117,9 @@ const NSInteger kChatPluginNumberOfCols = 5;
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    ChatPluginItem *item = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdef forIndexPath:indexPath];
+    ChatPluginItemCell *item = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdef forIndexPath:indexPath];
     
-    PluginItem *itemModel = [self.pluginList objectAtIndex:indexPath.row];
+    ChatPluginItem *itemModel = [self.pluginList objectAtIndex:indexPath.row];
     item.label.text = itemModel.title;
     item.imageView.image = [UIImage imageNamed:itemModel.image];
     
@@ -130,7 +131,7 @@ const NSInteger kChatPluginNumberOfCols = 5;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    PluginItem *item = [self.pluginList objectAtIndex:indexPath.row];
+    ChatPluginItem *item = [self.pluginList objectAtIndex:indexPath.row];
     
     if (item.callback)
     {

@@ -14,12 +14,12 @@
 /*!
  头像显示的形状
  */
-typedef NS_ENUM(NSInteger, UserAvatarStyle)
+typedef NS_ENUM(NSInteger, ChatUserAvatarStyle)
 {
     /*! 矩形 */
-    USER_AVATAR_RECTANGLE = 0,
+    ChatUserAvatarStyleRectangle = 0,
     /*! 圆形 */
-    USER_AVATAR_CYCLE
+    ChatUserAvatarStyleCycle
 };
 
 
@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, UserAvatarStyle)
  
  @discussion 默认值为矩形，即RC_USER_AVATAR_RECTANGLE
  */
-@property(nonatomic) UserAvatarStyle globalMessageAvatarStyle;
+@property(nonatomic) ChatUserAvatarStyle globalMessageAvatarStyle;
 
 /*!
  SDK会话页面中显示的头像大小
@@ -76,6 +76,13 @@ typedef NS_ENUM(NSInteger, UserAvatarStyle)
  @discussion 默认250.0f
  */
 @property (assign, nonatomic) CGFloat globalMessageContentViewMaxWidth;
+
+/**
+ 图片消息中图片的展示尺寸
+ 
+ @discussion 默认 150 * 150
+ */
+@property (assign, nonatomic) CGSize globalMessageImageSize;
 
 
 

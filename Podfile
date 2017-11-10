@@ -12,6 +12,8 @@ target 'Chat' do
   pod 'Masonry'
   pod 'SDWebImage'
   pod 'FMDB'
+  pod 'UITableView+FDTemplateLayoutCell'
+
 
   target 'ChatTests' do
     inherit! :search_paths
