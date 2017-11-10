@@ -12,6 +12,7 @@
 #import "UIView+ChatUI.h"
 #import "UIColor+ChatUI.h"
 #import "ChatMessageTextCell.h"
+#import "ChatMessageImageCell.h"
 
 #import <Masonry.h>
 #import <UITableView+FDTemplateLayoutCell.h>
@@ -20,6 +21,8 @@
 @interface ChatConversationViewController ()<UITableViewDataSource, UITableViewDelegate, ChatTableViewDelegate, ChatSessionInputBarControlDelegate>
 @property (strong, nonatomic) ChatTableView *conversationTableView;
 @property (strong, nonatomic) ChatSessionInputBarControl *inputBarControl;
+/** 消息注册表 */
+@property (strong, nonatomic) NSMutableDictionary *registerCellTable;
 /** 消息列表 */
 @property (strong, nonatomic) NSMutableArray *messageList;
 
@@ -35,6 +38,7 @@
     self.automaticallyAdjustsScrollViewInsets = YES;
     
     self.messageList = [[NSMutableArray alloc] init];
+    self.registerCellTable = [[NSMutableDictionary alloc] init];
     
     [self prepare];
 }
@@ -88,11 +92,15 @@
     [self.chatSessionInputBarControl insertPluginItem:imagePluginItem];
     [self.chatSessionInputBarControl insertPluginItem:cameraPluginItem];
     
+    // 注册消息
+    [self registerClass:[ChatMessageTextCell class] forMessageClass:[ChatTextMessageContent class]];
+    
+    
+    
+    
     
     self.conversationTableView.backgroundColor = rgbColor(235.0f, 235.0f, 235.0f, 1);
     [self.tableView setTableFooterView:[UIView new]];
-    [self.tableView registerClass:[ChatMessageTextCell class] forCellReuseIdentifier:NSStringFromClass([ChatMessageTextCell class])];
-    
 }
 
 #pragma mark - UITableViewDataSource
@@ -116,8 +124,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ChatMessageTextCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ChatMessageTextCell class]) forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
+    // 获取消息
+    ChatMessage *msg = [self.messageList objectAtIndex:indexPath.row];
+    // 用消息类在注册表中找到相应的Cell类名称
+    NSString *cellClassName = [self.registerCellTable objectForKey:NSStringFromClass([msg.messageContent class])];
+    Class cellClass = NSClassFromString(cellClassName);
+    ChatMessageTextCell *cell = [tableView dequeueReusableCellWithIdentifier:cellClassName forIndexPath:indexPath];
+    if (!cell)
+    {
+        cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellClassName];
+    }
+    
+    cell.messageModel = msg;    // 设置消息
     
     return cell;
 }
@@ -214,6 +232,32 @@
     
 }
 
+- (void)registerClass:(Class)cellClass forMessageClass:(Class)messageClass
+{
+    // 添加到注册表
+    [self.registerCellTable setObject:NSStringFromClass(cellClass) forKey:NSStringFromClass(messageClass)];
+    // 注册Cell
+    [self.tableView registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
+}
+
+- (void)sendImageMessage:(UIImage *)image
+{
+    ChatImageMessageContent *imageContent = [[ChatImageMessageContent alloc] init];
+    imageContent.image = image;
+    
+    ChatUserInfo *user = [[ChatUserInfo alloc] init];
+    user.name = @"Lili";
+    user.userId = @"18281863522";
+    user.userLogo = @"avatar-1";
+    
+    ChatMessage *imageMessage = [[ChatMessage alloc] initWithTargetId:@"17713582481" direction:ChatMessageDirection_send content:imageContent];
+    imageMessage.senderUserInfo = user;
+    
+    [self.messageList addObject:imageContent];
+    [self.tableView reloadData];
+    
+    [self scrollToBottomAnimated:YES];
+}
 
 - (void)scrollToBottomAnimated:(BOOL)animated
 {

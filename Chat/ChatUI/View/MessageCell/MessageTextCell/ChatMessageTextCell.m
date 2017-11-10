@@ -90,14 +90,6 @@
         make.bottom.mas_offset(0);
         make.right.mas_offset(0);
     }];
-    
-    // text label size
-    ChatTextMessageContent *textContent = (ChatTextMessageContent *)self.messageModel.messageContent;
-    [self.messageContentView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(textContent.contentSize.width);
-    }];
-    
-    [self.messageContentView layoutIfNeeded];
 }
 
 - (void)setMessageModel:(ChatMessage *)messageModel
@@ -106,12 +98,6 @@
     
     ChatTextMessageContent *textContent = (ChatTextMessageContent *)messageModel.messageContent;
     self.label.text = textContent.text; // 设置文本消息
-}
-
-
-- (CGSize)sizeThatFits:(CGSize)size
-{
-    return CGSizeMake(size.width, self.messageModel.messageContent.contentSize.height);
 }
 
 

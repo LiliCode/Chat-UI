@@ -22,6 +22,14 @@
 #pragma mark - UI界面API
 
 /*!
+ 注册自定义消息的Cell
+ 
+ @param cellClass      自定义消息Cell对应的自定义消息，该自定义Cell继承自ChatMessageBaseCell
+ @param messageClass   自定义消息的类，该自定义消息需要继承于ChatMessageContent
+ */
+- (void)registerClass:(Class)cellClass forMessageClass:(Class)messageClass;
+
+/*!
  滚动到列表最下方
  
  @param animated 是否开启动画效果

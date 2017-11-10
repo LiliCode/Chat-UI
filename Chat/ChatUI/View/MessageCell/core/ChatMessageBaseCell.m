@@ -130,6 +130,14 @@
             
         default: break;
     }
+    
+    // text label size
+    ChatMessageContent *content = self.messageModel.messageContent;
+    [self.messageContentView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(content.contentSize.width);
+    }];
+    
+    [self.messageContentView layoutIfNeeded];
 }
 
 
@@ -153,8 +161,11 @@
 }
 
 
-
-
+// 高度
+- (CGSize)sizeThatFits:(CGSize)size
+{
+    return CGSizeMake(size.width, self.messageModel.messageContent.contentSize.height);
+}
 
 
 

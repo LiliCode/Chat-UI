@@ -7,6 +7,7 @@
 //
 
 #import "ChatMessageBaseCell.h"
+#import "ChatImageMessageContent.h"
 
 @interface ChatMessageImageCell : ChatMessageBaseCell
 
