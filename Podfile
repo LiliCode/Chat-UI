@@ -13,6 +13,7 @@ target 'Chat' do
   pod 'SDWebImage'
   pod 'FMDB'
   pod 'UITableView+FDTemplateLayoutCell'
+  pod 'TZImagePickerController'
 
 
   target 'ChatTests' do

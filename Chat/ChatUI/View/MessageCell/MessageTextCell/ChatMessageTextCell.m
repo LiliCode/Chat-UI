@@ -11,8 +11,6 @@
 
 
 @interface ChatMessageTextCell ()
-/** 气泡图片 */
-@property (strong , nonatomic) UIImageView *bubbleImageView;
 /** text label */
 @property (strong , nonatomic) UILabel *label;
 
@@ -24,8 +22,6 @@
 {
     [super prepare];
     
-    // 气泡
-    [self.messageContentView addSubview:self.bubbleImageView];
     // 文本
     [self.messageContentView addSubview:self.label];
 #if DEBUG
@@ -46,16 +42,6 @@
     return _label;
 }
 
-- (UIImageView *)bubbleImageView
-{
-    if (!_bubbleImageView)
-    {
-        _bubbleImageView = [[UIImageView alloc] init];
-    }
-    
-    return _bubbleImageView;
-}
-
 - (void)layoutMessage
 {
     [super layoutMessage];
@@ -63,7 +49,6 @@
     switch (self.messageModel.direction)
     {
         case ChatMessageDirection_send:
-            self.bubbleImageView.image = [UIImage imageNamed:kMessageCell_BubbleImageSend];
             [self.label mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.top.mas_offset(5);
                 make.left.mas_offset(5);
@@ -72,7 +57,6 @@
             }];
             break;
         case ChatMessageDirection_received:
-            self.bubbleImageView.image = [UIImage imageNamed:kMessageCell_BubbleImageReceived];
             [self.label mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.top.mas_offset(5);
                 make.left.mas_offset(12);
@@ -83,13 +67,6 @@
             
         default: break;
     }
-    
-    [self.bubbleImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_offset(0);
-        make.left.mas_offset(0);
-        make.bottom.mas_offset(0);
-        make.right.mas_offset(0);
-    }];
 }
 
 - (void)setMessageModel:(ChatMessage *)messageModel

@@ -15,6 +15,7 @@
 #import "ChatMessageImageCell.h"
 
 #import <Masonry.h>
+#import <TZImagePickerController.h>
 #import <UITableView+FDTemplateLayoutCell.h>
 
 
@@ -83,6 +84,7 @@
     // add plugin
     ChatPluginItem *imagePluginItem = [ChatPluginItem pluginItemWithTitle:@"图片" image:kChatFcuntionView_PluginButtonImage callback:^(id sender) {
         NSLog(@"点击了图片");
+        [self selectImage];
     }];
     
     ChatPluginItem *cameraPluginItem = [ChatPluginItem pluginItemWithTitle:@"相机" image:kChatFcuntionView_PluginButtonCamera callback:^(id sender) {
@@ -119,7 +121,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [tableView fd_heightForCellWithIdentifier:NSStringFromClass([ChatMessageTextCell class]) cacheByIndexPath:indexPath configuration:^(ChatMessageBaseCell *cell) {
+    // 获取消息
+    ChatMessage *msg = [self.messageList objectAtIndex:indexPath.row];
+    // 用消息类在注册表中找到相应的Cell类名称
+    NSString *cellClassName = [self.registerCellTable objectForKey:NSStringFromClass([msg.messageContent class])];
+    // 计算高度
+    return [tableView fd_heightForCellWithIdentifier:cellClassName cacheByIndexPath:indexPath configuration:^(ChatMessageBaseCell *cell) {
         [self configureCell:cell atIndexPath:indexPath];
     }];
 }
@@ -162,31 +169,8 @@
 - (void)inputBarControl:(ChatSessionInputBarControl *)bar clickSend:(NSString *)text
 {
     NSLog(@"send: {\"text\":\"%@\"}", text);
-    
-    ChatMessage *messageItem = [[ChatMessage alloc] init];
-    ChatTextMessageContent *textContent = [[ChatTextMessageContent alloc] init];
-    textContent.text = text;
-    messageItem.messageContent = textContent;
-    messageItem.direction = self.messageList.count % 2;
-    ChatUserInfo *user = [[ChatUserInfo alloc] init];
-    if (messageItem.direction)
-    {
-        user.name = @"Lili";
-        user.userId = @"18281863522";
-        user.userLogo = @"avatar-1";
-    }
-    else
-    {
-        user.name = @"Donglinglai";
-        user.userId = @"17713582481";
-        user.userLogo = @"avatar-2";
-    }
-    messageItem.senderUserInfo = user;
-    
-    [self.messageList addObject:messageItem];
-    [self.tableView reloadData];
-    // 滚动
-    [self scrollToBottomAnimated:YES];
+
+    [self sendTextMessage:text];
 }
 
 - (void)inputBarControl:(ChatSessionInputBarControl *)bar didSelectPlugin:(NSInteger)index
@@ -222,16 +206,25 @@
     return self.inputBarControl;
 }
 
+
+- (void)selectImage
+{
+    TZImagePickerController *pickerController = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:nil];
+    pickerController.allowCrop = YES;
+    pickerController.allowPreview = YES;
+    [pickerController setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos,NSArray *assets,BOOL isSelectOriginalPhoto){
+        [self sendImageMessage:photos.firstObject];
+    }];
+
+    [self presentViewController:pickerController animated:YES completion:nil];
+}
+
+
 #pragma mark - 公共方法、暴露的接口方法
 
 - (void)endEditing
 {
     [self.inputBarControl endInputing];
-}
-
-- (void)sendTextMessage:(NSString *)text
-{
-    
 }
 
 - (void)registerClass:(Class)cellClass forMessageClass:(Class)messageClass
@@ -242,6 +235,34 @@
     [self.tableView registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
 }
 
+- (void)sendTextMessage:(NSString *)text
+{
+    ChatMessage *messageItem = [[ChatMessage alloc] init];
+    ChatTextMessageContent *textContent = [[ChatTextMessageContent alloc] init];
+    textContent.text = text;
+    messageItem.messageContent = textContent;
+    messageItem.direction = self.messageList.count % 2;
+    ChatUserInfo *user = [[ChatUserInfo alloc] init];
+    if (messageItem.direction)
+    {
+        user.name = @"Lili";
+        user.userId = @"18281863522";
+        user.userLogo = @"avatar-1";
+    }
+    else
+    {
+        user.name = @"Donglinglai";
+        user.userId = @"17713582481";
+        user.userLogo = @"avatar-2";
+    }
+    messageItem.senderUserInfo = user;
+
+    [self.messageList addObject:messageItem];
+    [self.tableView reloadData];
+    // 滚动
+    [self scrollToBottomAnimated:YES];
+}
+
 - (void)sendImageMessage:(UIImage *)image
 {
     ChatImageMessageContent *imageContent = [[ChatImageMessageContent alloc] init];
@@ -249,13 +270,13 @@
     
     ChatUserInfo *user = [[ChatUserInfo alloc] init];
     user.name = @"Lili";
-    user.userId = @"18281863522";
-    user.userLogo = @"avatar-1";
+    user.userId = @"17713582481";
+    user.userLogo = @"avatar-2";
     
-    ChatMessage *imageMessage = [[ChatMessage alloc] initWithTargetId:@"17713582481" direction:ChatMessageDirection_send content:imageContent];
+    ChatMessage *imageMessage = [[ChatMessage alloc] initWithTargetId:@"18281863522" direction:ChatMessageDirection_send content:imageContent];
     imageMessage.senderUserInfo = user;
     
-    [self.messageList addObject:imageContent];
+    [self.messageList addObject:imageMessage];
     [self.tableView reloadData];
     
     [self scrollToBottomAnimated:YES];
@@ -276,7 +297,8 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    
+
+
 }
 
 - (void)dealloc

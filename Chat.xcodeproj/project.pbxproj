@@ -12,6 +12,7 @@
 		222AF4071FA80F160042D39E /* ChatMessageImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222AF4061FA80F160042D39E /* ChatMessageImageCell.m */; };
 		222AF40A1FA80F710042D39E /* ChatTextMessageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 222AF4091FA80F710042D39E /* ChatTextMessageContent.m */; };
 		22444F131FA3328A00800C55 /* ChatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22444F121FA3328A00800C55 /* ChatTableView.m */; };
+		2247669F1FB60F9800BBB1EB /* ChatMessageBubbleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2247669E1FB60F9800BBB1EB /* ChatMessageBubbleCell.m */; };
 		2277C23B1FA01F8D0060478F /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277C23A1FA01F8D0060478F /* KeyboardViewController.m */; };
 		2277C23F1FA01F8D0060478F /* EmojiKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2277C2371FA01F8D0060478F /* EmojiKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2277C2461FA058600060478F /* ChatKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277C2451FA058600060478F /* ChatKeyboard.m */; };
@@ -94,6 +95,8 @@
 		222AF4091FA80F710042D39E /* ChatTextMessageContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatTextMessageContent.m; sourceTree = "<group>"; };
 		22444F111FA3328A00800C55 /* ChatTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatTableView.h; sourceTree = "<group>"; };
 		22444F121FA3328A00800C55 /* ChatTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatTableView.m; sourceTree = "<group>"; };
+		2247669D1FB60F9800BBB1EB /* ChatMessageBubbleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMessageBubbleCell.h; sourceTree = "<group>"; };
+		2247669E1FB60F9800BBB1EB /* ChatMessageBubbleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMessageBubbleCell.m; sourceTree = "<group>"; };
 		2277C2371FA01F8D0060478F /* EmojiKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmojiKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2277C2391FA01F8D0060478F /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
 		2277C23A1FA01F8D0060478F /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 			children = (
 				22EBF0A11FA6F07200E6AD14 /* ChatMessageBaseCell.h */,
 				22EBF0A21FA6F07200E6AD14 /* ChatMessageBaseCell.m */,
+				2247669D1FB60F9800BBB1EB /* ChatMessageBubbleCell.h */,
+				2247669E1FB60F9800BBB1EB /* ChatMessageBubbleCell.m */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -700,7 +705,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Chat/Pods-Chat-resources.sh",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -828,6 +833,7 @@
 				22B4DCB91FA1934F00EDE246 /* ChatViewController.m in Sources */,
 				22EBF0AB1FA6F53D00E6AD14 /* ChatUI.m in Sources */,
 				222AF40A1FA80F710042D39E /* ChatTextMessageContent.m in Sources */,
+				2247669F1FB60F9800BBB1EB /* ChatMessageBubbleCell.m in Sources */,
 				2277C2511FA05A440060478F /* ChatPluginBoardView.m in Sources */,
 				22FB67361F7F7156007A4888 /* ChatUserInfo.m in Sources */,
 				22FB67331F7F6D64007A4888 /* ChatMessage.m in Sources */,

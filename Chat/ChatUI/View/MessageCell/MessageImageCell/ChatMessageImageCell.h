@@ -6,9 +6,9 @@
 //  Copyright © 2017年 李立. All rights reserved.
 //
 
-#import "ChatMessageBaseCell.h"
+#import "ChatMessageBubbleCell.h"
 #import "ChatImageMessageContent.h"
 
-@interface ChatMessageImageCell : ChatMessageBaseCell
+@interface ChatMessageImageCell : ChatMessageBubbleCell
 
 @end

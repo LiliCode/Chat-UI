@@ -23,7 +23,6 @@
     [super prepare];
     
     self.photoImageView = [[UIImageView alloc] init];
-    self.photoImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.messageContentView addSubview:self.photoImageView];
 }
 
@@ -31,9 +30,21 @@
 {
     [super layoutMessage];
     
-    [self.photoImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(8, 8, 8, 8));
-    }];
+    switch (self.messageModel.direction)
+    {
+        case ChatMessageDirection_send:
+            [self.photoImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.edges.mas_equalTo(UIEdgeInsetsMake(3, 3, 3, 10));
+            }];
+            break;
+        case ChatMessageDirection_received:
+            [self.photoImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.edges.mas_equalTo(UIEdgeInsetsMake(3, 10, 3, 3));
+            }];
+            break;
+            
+        default: break;
+    }
 }
 
 - (void)setMessageModel:(ChatMessage *)messageModel
