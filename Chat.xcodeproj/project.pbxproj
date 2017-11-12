@@ -127,6 +127,7 @@
 		22EBF0A21FA6F07200E6AD14 /* ChatMessageBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageBaseCell.m; sourceTree = "<group>"; };
 		22EBF0A91FA6F53D00E6AD14 /* ChatUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatUI.h; sourceTree = "<group>"; };
 		22EBF0AA1FA6F53D00E6AD14 /* ChatUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatUI.m; sourceTree = "<group>"; };
+		22FA45341FB8A18600C5C391 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		22FB66E51F7F483B007A4888 /* Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FB66E91F7F483B007A4888 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22FB66EB1F7F483B007A4888 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -485,6 +486,7 @@
 		AC12FA17F7B05CAB8CEA7C82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22FA45341FB8A18600C5C391 /* AssetsLibrary.framework */,
 				C4B656ED99C09C31129393DC /* libPods-Chat.a */,
 				DADAF1C7B00796E63B614063 /* libPods-ChatTests.a */,
 				DBB869B1C2DCD7DDABE409A2 /* libPods-ChatUITests.a */,

@@ -59,10 +59,7 @@
     }
     
     [self.bubbleImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_offset(0);
-        make.left.mas_offset(0);
-        make.bottom.mas_offset(0);
-        make.right.mas_offset(0);
+        make.left.and.top.and.bottom.and.right.mas_offset(0);
     }];
 }
 

@@ -210,10 +210,10 @@
 - (void)selectImage
 {
     TZImagePickerController *pickerController = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:nil];
-    pickerController.allowCrop = YES;
+//    pickerController.allowCrop = YES;
     pickerController.allowPreview = YES;
     [pickerController setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos,NSArray *assets,BOOL isSelectOriginalPhoto){
-        [self sendImageMessage:photos.firstObject];
+        [self sendImageMessage:assets.firstObject];
     }];
 
     [self presentViewController:pickerController animated:YES completion:nil];
@@ -263,7 +263,7 @@
     [self scrollToBottomAnimated:YES];
 }
 
-- (void)sendImageMessage:(UIImage *)image
+- (void)sendImageMessage:(PHAsset *)image
 {
     ChatImageMessageContent *imageContent = [[ChatImageMessageContent alloc] init];
     imageContent.image = image;

@@ -33,7 +33,12 @@ static const CGFloat kMessageBubbleTopAndBottomMargin = 20.0f;
     _text = text;
     
     // 计算尺寸
-    self.contentSize = [self getMessageContentSize];
+    if (CGSizeEqualToSize(self.contentSize, CGSizeZero))
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            self.contentSize = [self getMessageContentSize];
+        });
+    }
 }
 
 - (CGSize)getMessageContentSize

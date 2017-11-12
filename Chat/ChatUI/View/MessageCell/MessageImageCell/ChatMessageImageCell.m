@@ -7,6 +7,7 @@
 //
 
 #import "ChatMessageImageCell.h"
+#import <Photos/Photos.h>
 #import <UIImageView+WebCache.h>
 #import <SDImageCache.h>
 #import <Masonry.h>
@@ -23,6 +24,8 @@
     [super prepare];
     
     self.photoImageView = [[UIImageView alloc] init];
+    self.photoImageView.contentMode = UIViewContentModeScaleAspectFill; // 平铺展示
+    self.photoImageView.clipsToBounds = YES;    // 剪切超出区域的显示
     [self.messageContentView addSubview:self.photoImageView];
 }
 
@@ -53,11 +56,11 @@
     
     ChatImageMessageContent *content = (ChatImageMessageContent *)messageModel.messageContent;
     
-    if ([content.image isMemberOfClass:[UIImage class]])
+    if ([content.image isMemberOfClass:[UIImage class]])    // UIImage 对象
     {
         self.photoImageView.image = content.image;
     }
-    else if ([content.image isKindOfClass:[NSString class]])
+    else if ([content.image isKindOfClass:[NSString class]])// NSString对象，一般是图片链接
     {
         UIImage *image = [[SDImageCache sharedImageCache] imageFromCacheForKey:content.image];
         if (image)
@@ -73,6 +76,15 @@
                 }
             }];
         }
+    }
+    else if ([content.image isMemberOfClass:[PHAsset class]]) // Photos
+    {
+        PHAsset *asset = (PHAsset *)content.image;
+        // 展示缩略图
+        PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+        [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:[ChatUI sharedUI].globalMessageImageSize contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+            self.photoImageView.image = result;
+        }];
     }
 }
 
