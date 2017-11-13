@@ -75,7 +75,7 @@
 #pragma mark - 风格设置
     self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = self.superview.backgroundColor;
 #pragma mark - 添加消息Cell最基本的视图
     // 头像
     [self.contentView addSubview:self.pLogoImageView];

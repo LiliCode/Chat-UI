@@ -10,6 +10,17 @@
 
 @implementation ChatTableView
 
+- (void)scrollToBottomAnimated:(BOOL)animated
+{
+    CGFloat height = self.contentSize.height;
+    if (height > CGRectGetHeight(self.frame))
+    {
+        height -= CGRectGetHeight(self.frame);
+        // 滚动
+        [self setContentOffset:CGPointMake(0, height) animated:animated];
+    }
+}
+
 
 //- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 //{

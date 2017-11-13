@@ -194,6 +194,11 @@
     [self.chatSessionInputBarControl beginInputing];
 }
 
+- (void)functionViewDidShowWithInputBarControl:(ChatSessionInputBarControl *)bar
+{
+    [self.conversationTableView scrollToBottomAnimated:YES];
+}
+
 #pragma mark - getter setter
 
 - (UITableView *)tableView
@@ -210,7 +215,6 @@
 - (void)selectImage
 {
     TZImagePickerController *pickerController = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:nil];
-//    pickerController.allowCrop = YES;
     pickerController.allowPreview = YES;
     [pickerController setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos,NSArray *assets,BOOL isSelectOriginalPhoto){
         [self sendImageMessage:assets.firstObject];
@@ -221,6 +225,12 @@
 
 
 #pragma mark - 公共方法、暴露的接口方法
+
+- (void)scrollToBottomAnimated:(BOOL)animated
+{
+    // 滚动
+    [self.conversationTableView scrollToBottomAnimated:YES];
+}
 
 - (void)endEditing
 {
@@ -260,7 +270,7 @@
     [self.messageList addObject:messageItem];
     [self.tableView reloadData];
     // 滚动
-    [self scrollToBottomAnimated:YES];
+    [self.conversationTableView scrollToBottomAnimated:YES];
 }
 
 - (void)sendImageMessage:(PHAsset *)image
@@ -279,17 +289,7 @@
     [self.messageList addObject:imageMessage];
     [self.tableView reloadData];
     
-    [self scrollToBottomAnimated:YES];
-}
-
-- (void)scrollToBottomAnimated:(BOOL)animated
-{
-    CGFloat yOffset = 0; //设置要滚动的位置 0最顶部 CGFLOAT_MAX最底部
-    if (self.conversationTableView.contentSize.height > self.conversationTableView.bounds.size.height - 64)
-    {
-        yOffset = self.conversationTableView.contentSize.height - self.conversationTableView.bounds.size.height + 64;
-        [self.conversationTableView setContentOffset:CGPointMake(0, yOffset) animated:animated];
-    }
+    [self.conversationTableView scrollToBottomAnimated:YES];
 }
 
 #pragma mark - 内存管理

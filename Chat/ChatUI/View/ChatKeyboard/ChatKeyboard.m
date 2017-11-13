@@ -63,9 +63,7 @@ const CGFloat kChatKeyboardAnimationDuration = 0.25;
     lineView.backgroundColor = rgbColor(220, 220, 221, 1);
     [self addSubview:lineView];
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_offset(0);
-        make.left.mas_offset(0);
-        make.right.mas_offset(0);
+        make.top.and.left.and.right.mas_offset(0);
         make.height.mas_offset(0.3);
     }];
 }

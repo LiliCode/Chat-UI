@@ -11,6 +11,25 @@
 #import "ChatUI.h"
 
 
+@protocol ChatMessageCellDelegate <NSObject>
+@optional
+
+/**
+ 点击了头像
+
+ @param userId 用户id
+ */
+- (void)didTapAvatar:(NSString *)userId;
+
+/**
+ 点击了cell
+
+ @param chatMessage 消息实体对象
+ */
+- (void)didTapMessageCell:(ChatMessage *)chatMessage;
+
+@end
+
 @interface ChatMessageBaseCell : UITableViewCell
 /** 头像 - logo*/
 @property (strong , nonatomic, readonly) UIImageView *logoImageView;
@@ -18,6 +37,8 @@
 @property (strong , nonatomic, readonly) UIView *messageContentView;
 /** 数据模型 */
 @property (strong , nonatomic) ChatMessage *messageModel;
+/** 代理对象 */
+@property (weak , nonatomic) id<ChatMessageCellDelegate> delegate;
 
 
 /**

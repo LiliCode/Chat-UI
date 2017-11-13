@@ -94,10 +94,24 @@ static CGFloat kTextViewBottom = 8.0f;
     return _emojiKeyboard;
 }
 
+- (void)drawLine
+{
+    // line
+    UIView *lineView = [[UIView alloc] init];
+    lineView.backgroundColor = rgbColor(220, 220, 221, 1);
+    [self addSubview:lineView];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.and.left.and.right.mas_offset(0);
+        make.height.mas_offset(0.3);
+    }];
+}
+
 - (void)prepare
 {
     __weak typeof(self) weakSelf = self;
     self.inputBarMaxHeight = kChatInputBarContentMaxHeight;
+    // 顶部线条
+    [self drawLine];
     // UI - #F4F4F6
     self.backgroundColor = rgbColor(244.0f, 244.0f, 246.0f, 1);
     // input bar bg
@@ -347,6 +361,21 @@ static CGFloat kTextViewBottom = 8.0f;
     }
     
     [self updateFunctionViewConstraints];
+    
+    if (type == ChatFunctionViewShowTypeNothing)
+    {
+        if ([self.delegate respondsToSelector:@selector(functionViewDidHideWithInputBarControl:)])
+        {
+            [self.delegate functionViewDidHideWithInputBarControl:self];
+        }
+    }
+    else
+    {
+        if ([self.delegate respondsToSelector:@selector(functionViewDidShowWithInputBarControl:)])
+        {
+            [self.delegate functionViewDidShowWithInputBarControl:self];
+        }
+    }
 }
 
 /**

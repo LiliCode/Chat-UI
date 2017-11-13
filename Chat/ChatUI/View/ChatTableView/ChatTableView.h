@@ -18,4 +18,12 @@
 /** ChatTableViewDelegate */
 @property (weak, nonatomic) id<ChatTableViewDelegate> chatDelegate;
 
+
+/**
+ 滚动到最底部
+
+ @param animated 动画 - YES:执行动画
+ */
+- (void)scrollToBottomAnimated:(BOOL)animated;
+
 @end

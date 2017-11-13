@@ -73,6 +73,22 @@ typedef NS_ENUM(NSUInteger, ChatFunctionViewShowType)
  */
 - (void)openSystemKeyboardWithInputBarControl:(ChatSessionInputBarControl *)bar;
 
+#pragma mark - 功能扩展板（包括键盘）弹起和隐藏操作
+
+/**
+ 功能板显示
+
+ @param bar ChatSessionInputBarControl
+ */
+- (void)functionViewDidShowWithInputBarControl:(ChatSessionInputBarControl *)bar;
+
+/**
+ 功能板隐藏
+ 
+ @param bar ChatSessionInputBarControl
+ */
+- (void)functionViewDidHideWithInputBarControl:(ChatSessionInputBarControl *)bar;
+
 @end
 
 
