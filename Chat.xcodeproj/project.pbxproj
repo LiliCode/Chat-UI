@@ -13,7 +13,8 @@
 		222AF40A1FA80F710042D39E /* ChatTextMessageContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 222AF4091FA80F710042D39E /* ChatTextMessageContent.m */; };
 		22444F131FA3328A00800C55 /* ChatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22444F121FA3328A00800C55 /* ChatTableView.m */; };
 		2247669F1FB60F9800BBB1EB /* ChatMessageBubbleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2247669E1FB60F9800BBB1EB /* ChatMessageBubbleCell.m */; };
-		2277C23B1FA01F8D0060478F /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277C23A1FA01F8D0060478F /* KeyboardViewController.m */; };
+		226672681FCD40A500B2DEF9 /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 226672651FCD40A400B2DEF9 /* KeyboardViewController.m */; };
+		226672691FCD40A500B2DEF9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226672671FCD40A400B2DEF9 /* Info.plist */; };
 		2277C2461FA058600060478F /* ChatKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277C2451FA058600060478F /* ChatKeyboard.m */; };
 		2277C2511FA05A440060478F /* ChatPluginBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277C24A1FA05A440060478F /* ChatPluginBoardView.m */; };
 		2277C2521FA05A440060478F /* ChatPluginItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277C24B1FA05A440060478F /* ChatPluginItemCell.m */; };
@@ -82,10 +83,10 @@
 		22444F121FA3328A00800C55 /* ChatTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatTableView.m; sourceTree = "<group>"; };
 		2247669D1FB60F9800BBB1EB /* ChatMessageBubbleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMessageBubbleCell.h; sourceTree = "<group>"; };
 		2247669E1FB60F9800BBB1EB /* ChatMessageBubbleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMessageBubbleCell.m; sourceTree = "<group>"; };
+		226672651FCD40A400B2DEF9 /* KeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
+		226672661FCD40A400B2DEF9 /* KeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
+		226672671FCD40A400B2DEF9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2277C2371FA01F8D0060478F /* EmojiKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmojiKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		2277C2391FA01F8D0060478F /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
-		2277C23A1FA01F8D0060478F /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
-		2277C23C1FA01F8D0060478F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2277C2441FA058600060478F /* ChatKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatKeyboard.h; sourceTree = "<group>"; };
 		2277C2451FA058600060478F /* ChatKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatKeyboard.m; sourceTree = "<group>"; };
 		2277C2481FA05A440060478F /* ChatPluginBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatPluginBoardView.h; sourceTree = "<group>"; };
@@ -226,15 +227,15 @@
 			path = ChatTableView;
 			sourceTree = "<group>";
 		};
-		2277C2381FA01F8D0060478F /* EmojiKeyboard */ = {
+		226672641FCD40A400B2DEF9 /* EmojiKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				2277C2391FA01F8D0060478F /* KeyboardViewController.h */,
-				2277C23A1FA01F8D0060478F /* KeyboardViewController.m */,
-				2277C23C1FA01F8D0060478F /* Info.plist */,
+				226672651FCD40A400B2DEF9 /* KeyboardViewController.m */,
+				226672661FCD40A400B2DEF9 /* KeyboardViewController.h */,
+				226672671FCD40A400B2DEF9 /* Info.plist */,
 			);
 			path = EmojiKeyboard;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		2277C2471FA05A440060478F /* ChatPluginBoardView */ = {
 			isa = PBXGroup;
@@ -315,7 +316,7 @@
 				22FB66E71F7F483B007A4888 /* Chat */,
 				22FB67011F7F483B007A4888 /* ChatTests */,
 				22FB670C1F7F483B007A4888 /* ChatUITests */,
-				2277C2381FA01F8D0060478F /* EmojiKeyboard */,
+				226672641FCD40A400B2DEF9 /* EmojiKeyboard */,
 				22FB66E61F7F483B007A4888 /* Products */,
 				0CE5E1A83BE80603A7C94A78 /* Pods */,
 				AC12FA17F7B05CAB8CEA7C82 /* Frameworks */,
@@ -629,6 +630,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226672691FCD40A500B2DEF9 /* Info.plist in Resources */,
 				22FB66F81F7F483B007A4888 /* LaunchScreen.storyboard in Resources */,
 				22FB66F51F7F483B007A4888 /* Assets.xcassets in Resources */,
 				22FB66F31F7F483B007A4888 /* Main.storyboard in Resources */,
@@ -819,7 +821,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2277C23B1FA01F8D0060478F /* KeyboardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,6 +851,7 @@
 				2277C2521FA05A440060478F /* ChatPluginItemCell.m in Sources */,
 				22EBF05F1FA6B7EE00E6AD14 /* ChatPluginItem.m in Sources */,
 				22E7533A1FB5575400EE2550 /* ChatImageMessageContent.m in Sources */,
+				226672681FCD40A500B2DEF9 /* KeyboardViewController.m in Sources */,
 				22EBF05B1FA6B7E500E6AD14 /* ChatEmojiItem.m in Sources */,
 				2277C2531FA05A440060478F /* ChatEmojiItemCell.m in Sources */,
 				22FB67431F7F7EA0007A4888 /* ChatSessionInputBarControl.m in Sources */,

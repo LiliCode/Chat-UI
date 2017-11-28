@@ -10,6 +10,8 @@
 
 @interface UIView (ChatUI)
 
+#pragma mark - frame
+
 - (CGFloat)height;
 
 - (CGFloat)width;
@@ -17,5 +19,9 @@
 - (CGSize)size;
 
 - (CGPoint)origin;
+
+#pragma mrak - layout
+
+
 
 @end

@@ -6,31 +6,33 @@
 	<dict>
 		<key>Chat.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
-		</dict>
-		<key>EmojiKeyboard.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2277C2361FA01F8D0060478F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>22FB66E41F7F483B007A4888</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>22FB66FD1F7F483B007A4888</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>22FB67081F7F483B007A4888</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 	</dict>
 </dict>
