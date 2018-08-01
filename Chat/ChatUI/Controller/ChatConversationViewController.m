@@ -175,7 +175,7 @@
 
 - (void)inputBarControl:(ChatSessionInputBarControl *)bar didSelectPlugin:(NSInteger)index
 {
-    NSLog(@"click plugin: %ld", index);
+    NSLog(@"click plugin: %ld", (long)index);
 }
 
 - (void)openPluginKeyboardWithInputBarControl:(ChatSessionInputBarControl *)bar
@@ -229,7 +229,9 @@
 - (void)scrollToBottomAnimated:(BOOL)animated
 {
     // 滚动
-    [self.conversationTableView scrollToBottomAnimated:YES];
+//    [self.conversationTableView scrollToBottomAnimated:YES];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.messageList.count - 1 inSection:0];
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:animated];
 }
 
 - (void)endEditing
@@ -268,9 +270,12 @@
     messageItem.senderUserInfo = user;
 
     [self.messageList addObject:messageItem];
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.messageList.count - 1 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     // 滚动
-    [self.conversationTableView scrollToBottomAnimated:YES];
+//    [self.conversationTableView scrollToBottomAnimated:YES];
+    [self scrollToBottomAnimated:YES];
 }
 
 - (void)sendImageMessage:(PHAsset *)image
@@ -287,9 +292,10 @@
     imageMessage.senderUserInfo = user;
     
     [self.messageList addObject:imageMessage];
-    [self.tableView reloadData];
-    
-    [self.conversationTableView scrollToBottomAnimated:YES];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.messageList.count - 1 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    // 滚动
+    [self scrollToBottomAnimated:YES];
 }
 
 #pragma mark - 内存管理
