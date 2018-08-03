@@ -30,7 +30,6 @@
 		22EBF0AB1FA6F53D00E6AD14 /* ChatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EBF0AA1FA6F53D00E6AD14 /* ChatUI.m */; };
 		22FB66EA1F7F483B007A4888 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB66E91F7F483B007A4888 /* main.m */; };
 		22FB66ED1F7F483B007A4888 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB66EC1F7F483B007A4888 /* AppDelegate.m */; };
-		22FB66F01F7F483B007A4888 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB66EF1F7F483B007A4888 /* ViewController.m */; };
 		22FB66F31F7F483B007A4888 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FB66F11F7F483B007A4888 /* Main.storyboard */; };
 		22FB66F51F7F483B007A4888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22FB66F41F7F483B007A4888 /* Assets.xcassets */; };
 		22FB66F81F7F483B007A4888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FB66F61F7F483B007A4888 /* LaunchScreen.storyboard */; };
@@ -45,6 +44,7 @@
 		CD1B3FCE08DEF62DB8CACA73 /* libPods-ChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DADAF1C7B00796E63B614063 /* libPods-ChatTests.a */; };
 		DD991EE913B6108FD39BD9BB /* libPods-Chat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B656ED99C09C31129393DC /* libPods-Chat.a */; };
 		E2BF09AA21143B1F0045443A /* UINavigationController+ChatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = E2BF09A921143B1F0045443A /* UINavigationController+ChatUI.m */; };
+		E2BF09F121144FF70045443A /* ChatService.m in Sources */ = {isa = PBXBuildFile; fileRef = E2BF09F021144FF70045443A /* ChatService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,8 +119,6 @@
 		22FB66E91F7F483B007A4888 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22FB66EB1F7F483B007A4888 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		22FB66EC1F7F483B007A4888 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		22FB66EE1F7F483B007A4888 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		22FB66EF1F7F483B007A4888 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		22FB66F21F7F483B007A4888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22FB66F41F7F483B007A4888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22FB66F71F7F483B007A4888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -153,6 +151,8 @@
 		DBB869B1C2DCD7DDABE409A2 /* libPods-ChatUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChatUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BF09A821143B1F0045443A /* UINavigationController+ChatUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ChatUI.h"; sourceTree = "<group>"; };
 		E2BF09A921143B1F0045443A /* UINavigationController+ChatUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ChatUI.m"; sourceTree = "<group>"; };
+		E2BF09EF21144FF70045443A /* ChatService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatService.h; sourceTree = "<group>"; };
+		E2BF09F021144FF70045443A /* ChatService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,13 +340,9 @@
 		22FB66E71F7F483B007A4888 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				22FB671B1F7F4B66007A4888 /* ChatUI */,
+				E2BF09E921144EB70045443A /* Class */,
 				22FB66EB1F7F483B007A4888 /* AppDelegate.h */,
 				22FB66EC1F7F483B007A4888 /* AppDelegate.m */,
-				22FB66EE1F7F483B007A4888 /* ViewController.h */,
-				22FB66EF1F7F483B007A4888 /* ViewController.m */,
-				22B4DCB71FA1934F00EDE246 /* ChatViewController.h */,
-				22B4DCB81FA1934F00EDE246 /* ChatViewController.m */,
 				22FB66F11F7F483B007A4888 /* Main.storyboard */,
 				22FB66F41F7F483B007A4888 /* Assets.xcassets */,
 				22FB66F61F7F483B007A4888 /* LaunchScreen.storyboard */,
@@ -385,7 +381,7 @@
 		22FB671B1F7F4B66007A4888 /* ChatUI */ = {
 			isa = PBXGroup;
 			children = (
-				22FB674A1F7F8C7B007A4888 /* Category */,
+				E2BF09EE21144FB90045443A /* Service */,
 				22FB67221F7F4E03007A4888 /* Controller */,
 				22FB67251F7F4E03007A4888 /* Model */,
 				22FB67261F7F4E03007A4888 /* View */,
@@ -398,6 +394,8 @@
 			children = (
 				22FB67231F7F4E03007A4888 /* ChatConversationViewController.h */,
 				22FB67241F7F4E03007A4888 /* ChatConversationViewController.m */,
+				22B4DCB71FA1934F00EDE246 /* ChatViewController.h */,
+				22B4DCB81FA1934F00EDE246 /* ChatViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -485,6 +483,56 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E2BF09E921144EB70045443A /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				E2BF09ED21144F870045443A /* Base */,
+				E2BF09EC21144F870045443A /* Vendor */,
+				E2BF09EA21144EB70045443A /* Contacts */,
+				E2BF09EB21144EB70045443A /* Recents */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		E2BF09EA21144EB70045443A /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				22FB671B1F7F4B66007A4888 /* ChatUI */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		E2BF09EB21144EB70045443A /* Recents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Recents;
+			sourceTree = "<group>";
+		};
+		E2BF09EC21144F870045443A /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		E2BF09ED21144F870045443A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				22FB674A1F7F8C7B007A4888 /* Category */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E2BF09EE21144FB90045443A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E2BF09EF21144FF70045443A /* ChatService.h */,
+				E2BF09F021144FF70045443A /* ChatService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -513,7 +561,6 @@
 				22FB66E11F7F483B007A4888 /* Sources */,
 				22FB66E21F7F483B007A4888 /* Frameworks */,
 				22FB66E31F7F483B007A4888 /* Resources */,
-				9FD7714E2F81C6243FC6C7C4 /* [CP] Embed Pods Frameworks */,
 				419CABDFAD39903604C92A4B /* [CP] Copy Pods Resources */,
 				22DF97D31FBBD3A1004EE701 /* ShellScript */,
 			);
@@ -535,8 +582,6 @@
 				22FB66FA1F7F483B007A4888 /* Sources */,
 				22FB66FB1F7F483B007A4888 /* Frameworks */,
 				22FB66FC1F7F483B007A4888 /* Resources */,
-				2DE0F02198C0575261CEE3A4 /* [CP] Embed Pods Frameworks */,
-				434231BA6D17D244F7D887DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -556,8 +601,6 @@
 				22FB67051F7F483B007A4888 /* Sources */,
 				22FB67061F7F483B007A4888 /* Frameworks */,
 				22FB67071F7F483B007A4888 /* Resources */,
-				DBB829D6FE6DECB5A4B2FFAC /* [CP] Embed Pods Frameworks */,
-				F779C440587B9B83651A7383 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -690,21 +733,6 @@
 			shellPath = /bin/sh;
 			shellScript = "version=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" $PRODUCT_SETTINGS_PATH`\nversion=`expr $version + 1`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $version\" $PRODUCT_SETTINGS_PATH";
 		};
-		2DE0F02198C0575261CEE3A4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatTests/Pods-ChatTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		419CABDFAD39903604C92A4B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -716,26 +744,11 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chat/Pods-Chat-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		434231BA6D17D244F7D887DF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatTests/Pods-ChatTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4B3CCE0AA5DCE88F5F6A986C /* [CP] Check Pods Manifest.lock */ = {
@@ -774,51 +787,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9FD7714E2F81C6243FC6C7C4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chat/Pods-Chat-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DBB829D6FE6DECB5A4B2FFAC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatUITests/Pods-ChatUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F779C440587B9B83651A7383 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatUITests/Pods-ChatUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -844,8 +812,8 @@
 				22FB67361F7F7156007A4888 /* ChatUserInfo.m in Sources */,
 				22FB67331F7F6D64007A4888 /* ChatMessage.m in Sources */,
 				22EBF0A51FA6F07300E6AD14 /* ChatMessageBaseCell.m in Sources */,
-				22FB66F01F7F483B007A4888 /* ViewController.m in Sources */,
 				222AF4071FA80F160042D39E /* ChatMessageImageCell.m in Sources */,
+				E2BF09F121144FF70045443A /* ChatService.m in Sources */,
 				22FB67501F7F8CD4007A4888 /* UIView+ChatUI.m in Sources */,
 				222AF4031FA80EEE0042D39E /* ChatMessageTextCell.m in Sources */,
 				22FB67271F7F4E03007A4888 /* ChatConversationViewController.m in Sources */,

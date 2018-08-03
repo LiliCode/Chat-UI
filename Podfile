@@ -14,7 +14,7 @@ target 'Chat' do
   pod 'FMDB'
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'TZImagePickerController'
-
+  pod 'YYText'
 
   target 'ChatTests' do
     inherit! :search_paths
