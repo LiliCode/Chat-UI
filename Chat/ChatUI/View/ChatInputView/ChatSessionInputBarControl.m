@@ -124,6 +124,7 @@ static CGFloat kTextViewBottom = 8.0f;
     }];
     // 插件入口 plugin
     self.pluginButton = [[UIButton alloc] init];
+    self.pluginButton.imageEdgeInsets = UIEdgeInsetsMake(4, 4, 4, 4);
     [self.pluginButton addTarget:self action:@selector(openPlugin:) forControlEvents:UIControlEventTouchUpInside];
     [self.pluginButton setImage:[UIImage imageNamed:kInputControl_PluginButtonNormal] forState:UIControlStateNormal];
     [self.pluginButton setImage:[UIImage imageNamed:kInputControl_PluginButtonHighlighted] forState:UIControlStateNormal];
@@ -137,6 +138,7 @@ static CGFloat kTextViewBottom = 8.0f;
     
     // 表情键盘 emoji
     self.emojiButton = [[UIButton alloc] init];
+    self.emojiButton.imageEdgeInsets = UIEdgeInsetsMake(4, 4, 4, 4);
     [self.emojiButton addTarget:self action:@selector(openEmoji:) forControlEvents:UIControlEventTouchUpInside];
     [self.emojiButton setImage:[UIImage imageNamed:kInputControl_EmojiButtonNormal] forState:UIControlStateNormal];
     [self.emojiButton setImage:[UIImage imageNamed:kInputControl_EmojiButtonHighlighted] forState:UIControlStateNormal];
@@ -150,9 +152,10 @@ static CGFloat kTextViewBottom = 8.0f;
     
     // 手写输入键盘
     UIButton *penButton = [[UIButton alloc] init];
+    penButton.imageEdgeInsets = UIEdgeInsetsMake(4, 4, 4, 4);
     [penButton addTarget:self action:@selector(penAction:) forControlEvents:UIControlEventTouchUpInside];
-    [penButton setImage:[UIImage imageNamed:kInputControl_PenButtonNormal] forState:UIControlStateNormal];
-    [penButton setImage:[UIImage imageNamed:kInputControl_PenButtonHighlighted] forState:UIControlStateNormal];
+    [penButton setImage:[UIImage imageNamed:kInputControl_VoiceButtonNormal] forState:UIControlStateNormal];
+    [penButton setImage:[UIImage imageNamed:kInputControl_VoiceButtonHighlighted] forState:UIControlStateNormal];
     [self.inputBarBGView addSubview:penButton];
     [penButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(8);

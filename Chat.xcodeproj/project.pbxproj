@@ -575,12 +575,12 @@
 				TargetAttributes = {
 					2277C2361FA01F8D0060478F = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = 4J96E2Q5H6;
+						DevelopmentTeam = 5YNX8VL4CA;
 						ProvisioningStyle = Automatic;
 					};
 					22FB66E41F7F483B007A4888 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4J96E2Q5H6;
+						DevelopmentTeam = 5YNX8VL4CA;
 						ProvisioningStyle = Automatic;
 					};
 					22FB66FD1F7F483B007A4888 = {
@@ -922,7 +922,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4J96E2Q5H6;
+				DEVELOPMENT_TEAM = 5YNX8VL4CA;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = EmojiKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -940,7 +940,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4J96E2Q5H6;
+				DEVELOPMENT_TEAM = 5YNX8VL4CA;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = EmojiKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1063,7 +1063,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4J96E2Q5H6;
+				DEVELOPMENT_TEAM = 5YNX8VL4CA;
 				INFOPLIST_FILE = Chat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1082,7 +1082,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4J96E2Q5H6;
+				DEVELOPMENT_TEAM = 5YNX8VL4CA;
 				INFOPLIST_FILE = Chat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

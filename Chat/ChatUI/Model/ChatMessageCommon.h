@@ -38,14 +38,17 @@ typedef NS_ENUM(NSUInteger, ChatMessageDirection)
 };
 
 
-#define kInputControl_PluginButtonNormal @"icon_add_def"
-#define kInputControl_PluginButtonHighlighted @"icon_add_pre"
+#define kInputControl_PluginButtonNormal @"chat_setmode_add_btn_normal"
+#define kInputControl_PluginButtonHighlighted @"chat_setmode_add_btn_high"
 
-#define kInputControl_EmojiButtonNormal @"icon_smile_def"
-#define kInputControl_EmojiButtonHighlighted @"icon_smile_pre"
+#define kInputControl_EmojiButtonNormal @"chatting_biaoqing_btn_normal"
+#define kInputControl_EmojiButtonHighlighted @"chatting_biaoqing_btn_high"
 
-#define kInputControl_PenButtonNormal @"icon_inport_def"
-#define kInputControl_PenButtonHighlighted @"icon_inport_def pre"
+#define kInputControl_PenButtonNormal @"chat_setmode_key_btn_normal"
+#define kInputControl_PenButtonHighlighted @"chat_setmode_key_btn_high"
+
+#define kInputControl_VoiceButtonNormal @"chat_setmode_voice_btn_normal"
+#define kInputControl_VoiceButtonHighlighted @"chat_setmode_voice_btn_high"
 
 #define kMessageCell_BubbleImageSend @"chat_to_bg_normal"
 #define kMessageCell_BubbleImageReceived @"chat_from_bg_normal"
