@@ -44,6 +44,7 @@
 		22FB67501F7F8CD4007A4888 /* UIView+ChatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB674F1F7F8CD4007A4888 /* UIView+ChatUI.m */; };
 		CD1B3FCE08DEF62DB8CACA73 /* libPods-ChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DADAF1C7B00796E63B614063 /* libPods-ChatTests.a */; };
 		DD991EE913B6108FD39BD9BB /* libPods-Chat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B656ED99C09C31129393DC /* libPods-Chat.a */; };
+		E2BF09AA21143B1F0045443A /* UINavigationController+ChatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = E2BF09A921143B1F0045443A /* UINavigationController+ChatUI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,8 @@
 		C6A6C671623AF85D655D0F53 /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		DADAF1C7B00796E63B614063 /* libPods-ChatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB869B1C2DCD7DDABE409A2 /* libPods-ChatUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChatUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2BF09A821143B1F0045443A /* UINavigationController+ChatUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ChatUI.h"; sourceTree = "<group>"; };
+		E2BF09A921143B1F0045443A /* UINavigationController+ChatUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ChatUI.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +457,8 @@
 				227ED72E1FA886F20025FF26 /* NSString+ChatUI.m */,
 				227ED7301FA8BE340025FF26 /* UIColor+ChatUI.h */,
 				227ED7311FA8BE340025FF26 /* UIColor+ChatUI.m */,
+				E2BF09A821143B1F0045443A /* UINavigationController+ChatUI.h */,
+				E2BF09A921143B1F0045443A /* UINavigationController+ChatUI.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -846,6 +851,7 @@
 				22FB67271F7F4E03007A4888 /* ChatConversationViewController.m in Sources */,
 				2277C2541FA05A440060478F /* ChatEmojiBoardView.m in Sources */,
 				22FB66ED1F7F483B007A4888 /* AppDelegate.m in Sources */,
+				E2BF09AA21143B1F0045443A /* UINavigationController+ChatUI.m in Sources */,
 				22FB66EA1F7F483B007A4888 /* main.m in Sources */,
 				22444F131FA3328A00800C55 /* ChatTableView.m in Sources */,
 				2277C2521FA05A440060478F /* ChatPluginItemCell.m in Sources */,
