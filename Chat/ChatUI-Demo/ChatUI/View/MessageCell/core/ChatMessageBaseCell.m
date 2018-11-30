@@ -8,7 +8,7 @@
 
 #import "ChatMessageBaseCell.h"
 #import <Masonry.h>
-
+#import <SDWebImage/UIImageView+WebCache.h>
 
 
 @interface ChatMessageBaseCell ()
@@ -157,7 +157,7 @@
 {
     _messageModel = messageModel;
     // 设置头像
-    self.logoImageView.image = [UIImage imageNamed:messageModel.senderUserInfo.userLogo];
+    [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:messageModel.senderUserInfo.userLogo]];
 }
 
 

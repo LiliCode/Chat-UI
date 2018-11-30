@@ -48,12 +48,14 @@
     
     switch (self.messageModel.direction)
     {
-        case ChatMessageDirection_send:
-            self.bubbleImageView.image = [UIImage imageNamed:kMessageCell_BubbleImageSend];
-            break;
-        case ChatMessageDirection_received:
-            self.bubbleImageView.image = [UIImage imageNamed:kMessageCell_BubbleImageReceived];
-            break;
+        case ChatMessageDirection_send: {
+            UIImage *bubbleImage = [UIImage imageNamed:kMessageCell_BubbleImageSend];
+            self.bubbleImageView.image = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(30, 20, 12, 32)];
+        } break;
+        case ChatMessageDirection_received: {
+            UIImage *bubbleImage = [UIImage imageNamed:kMessageCell_BubbleImageReceived];
+            self.bubbleImageView.image = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(30, 20, 12, 50)];
+        } break;
             
         default: break;
     }

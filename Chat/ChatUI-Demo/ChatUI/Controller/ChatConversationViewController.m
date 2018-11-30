@@ -263,13 +263,13 @@
     {
         user.name = @"Lili";
         user.userId = @"18281863522";
-        user.userLogo = @"avatar-1";
+        user.userLogo = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543579585561&di=99b9abc5a262103036d8f1a2221899ba&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fblog%2F201406%2F07%2F20140607101002_NK5er.thumb.600_0.jpeg";
     }
     else
     {
         user.name = @"Donglinglai";
         user.userId = @"17713582481";
-        user.userLogo = @"avatar-2";
+        user.userLogo = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543579659602&di=0cf5674a15eeff3f48b8e720f0edc2e0&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201601%2F29%2F20160129221244_keVnR.thumb.700_0.jpeg";
     }
     messageItem.senderUserInfo = user;
 
@@ -290,7 +290,7 @@
     ChatUserInfo *user = [[ChatUserInfo alloc] init];
     user.name = @"Lili";
     user.userId = @"17713582481";
-    user.userLogo = @"avatar-2";
+    user.userLogo = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543579659602&di=0cf5674a15eeff3f48b8e720f0edc2e0&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201601%2F29%2F20160129221244_keVnR.thumb.700_0.jpeg";
     
     ChatMessage *imageMessage = [[ChatMessage alloc] initWithTargetId:@"18281863522" direction:ChatMessageDirection_send content:imageContent];
     imageMessage.senderUserInfo = user;

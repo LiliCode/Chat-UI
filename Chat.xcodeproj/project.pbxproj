@@ -45,6 +45,18 @@
 		E24795E421B121DB00E95106 /* UIColor+ChatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = E24795C621B121DB00E95106 /* UIColor+ChatUI.m */; };
 		E24795E521B121DB00E95106 /* UIView+ChatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = E24795C721B121DB00E95106 /* UIView+ChatUI.m */; };
 		E24795E621B121DB00E95106 /* NSString+ChatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = E24795C821B121DB00E95106 /* NSString+ChatUI.m */; };
+		E247960D21B136F500E95106 /* chatting_biaoqing_btn_high.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960121B136F500E95106 /* chatting_biaoqing_btn_high.png */; };
+		E247960E21B136F500E95106 /* chat_to_bg_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960221B136F500E95106 /* chat_to_bg_normal@2x.png */; };
+		E247960F21B136F500E95106 /* chat_setmode_voice_btn_high.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960321B136F500E95106 /* chat_setmode_voice_btn_high.png */; };
+		E247961021B136F500E95106 /* chat_setmode_key_btn_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960421B136F500E95106 /* chat_setmode_key_btn_normal.png */; };
+		E247961121B136F500E95106 /* chatting_biaoqing_btn_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960521B136F500E95106 /* chatting_biaoqing_btn_normal.png */; };
+		E247961221B136F500E95106 /* chat_setmode_add_btn_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960621B136F500E95106 /* chat_setmode_add_btn_normal.png */; };
+		E247961321B136F500E95106 /* chat_setmode_key_btn_high.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960721B136F500E95106 /* chat_setmode_key_btn_high.png */; };
+		E247961421B136F500E95106 /* chat_setmode_voice_btn_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960821B136F500E95106 /* chat_setmode_voice_btn_normal.png */; };
+		E247961521B136F500E95106 /* actionbar_camera_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960921B136F500E95106 /* actionbar_camera_icon.png */; };
+		E247961621B136F500E95106 /* chat_from_bg_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960A21B136F500E95106 /* chat_from_bg_normal@2x.png */; };
+		E247961721B136F500E95106 /* chat_setmode_add_btn_high.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960B21B136F500E95106 /* chat_setmode_add_btn_high.png */; };
+		E247961821B136F500E95106 /* actionbar_picture_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960C21B136F500E95106 /* actionbar_picture_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +157,18 @@
 		E24795C921B121DB00E95106 /* UINavigationController+ChatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ChatUI.h"; sourceTree = "<group>"; };
 		E24795CA21B121DB00E95106 /* UIColor+ChatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ChatUI.h"; sourceTree = "<group>"; };
 		E24795CB21B121DB00E95106 /* UIView+ChatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ChatUI.h"; sourceTree = "<group>"; };
+		E247960121B136F500E95106 /* chatting_biaoqing_btn_high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatting_biaoqing_btn_high.png; sourceTree = "<group>"; };
+		E247960221B136F500E95106 /* chat_to_bg_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_to_bg_normal@2x.png"; sourceTree = "<group>"; };
+		E247960321B136F500E95106 /* chat_setmode_voice_btn_high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_setmode_voice_btn_high.png; sourceTree = "<group>"; };
+		E247960421B136F500E95106 /* chat_setmode_key_btn_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_setmode_key_btn_normal.png; sourceTree = "<group>"; };
+		E247960521B136F500E95106 /* chatting_biaoqing_btn_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatting_biaoqing_btn_normal.png; sourceTree = "<group>"; };
+		E247960621B136F500E95106 /* chat_setmode_add_btn_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_setmode_add_btn_normal.png; sourceTree = "<group>"; };
+		E247960721B136F500E95106 /* chat_setmode_key_btn_high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_setmode_key_btn_high.png; sourceTree = "<group>"; };
+		E247960821B136F500E95106 /* chat_setmode_voice_btn_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_setmode_voice_btn_normal.png; sourceTree = "<group>"; };
+		E247960921B136F500E95106 /* actionbar_camera_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = actionbar_camera_icon.png; sourceTree = "<group>"; };
+		E247960A21B136F500E95106 /* chat_from_bg_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_from_bg_normal@2x.png"; sourceTree = "<group>"; };
+		E247960B21B136F500E95106 /* chat_setmode_add_btn_high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_setmode_add_btn_high.png; sourceTree = "<group>"; };
+		E247960C21B136F500E95106 /* actionbar_picture_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = actionbar_picture_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +302,7 @@
 		E247958221B121DB00E95106 /* ChatUI-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				E247960021B136F500E95106 /* Resources */,
 				E247958321B121DB00E95106 /* ChatUI */,
 				E24795C221B121DB00E95106 /* Base */,
 				E24795CC21B121DB00E95106 /* Vendor */,
@@ -501,6 +526,25 @@
 			path = Vendor;
 			sourceTree = "<group>";
 		};
+		E247960021B136F500E95106 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E247960121B136F500E95106 /* chatting_biaoqing_btn_high.png */,
+				E247960221B136F500E95106 /* chat_to_bg_normal@2x.png */,
+				E247960321B136F500E95106 /* chat_setmode_voice_btn_high.png */,
+				E247960421B136F500E95106 /* chat_setmode_key_btn_normal.png */,
+				E247960521B136F500E95106 /* chatting_biaoqing_btn_normal.png */,
+				E247960621B136F500E95106 /* chat_setmode_add_btn_normal.png */,
+				E247960721B136F500E95106 /* chat_setmode_key_btn_high.png */,
+				E247960821B136F500E95106 /* chat_setmode_voice_btn_normal.png */,
+				E247960921B136F500E95106 /* actionbar_camera_icon.png */,
+				E247960A21B136F500E95106 /* chat_from_bg_normal@2x.png */,
+				E247960B21B136F500E95106 /* chat_setmode_add_btn_high.png */,
+				E247960C21B136F500E95106 /* actionbar_picture_icon.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -615,10 +659,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E247961621B136F500E95106 /* chat_from_bg_normal@2x.png in Resources */,
 				226672691FCD40A500B2DEF9 /* Info.plist in Resources */,
+				E247960D21B136F500E95106 /* chatting_biaoqing_btn_high.png in Resources */,
+				E247961821B136F500E95106 /* actionbar_picture_icon.png in Resources */,
+				E247960F21B136F500E95106 /* chat_setmode_voice_btn_high.png in Resources */,
 				22FB66F81F7F483B007A4888 /* LaunchScreen.storyboard in Resources */,
+				E247961421B136F500E95106 /* chat_setmode_voice_btn_normal.png in Resources */,
+				E247960E21B136F500E95106 /* chat_to_bg_normal@2x.png in Resources */,
+				E247961221B136F500E95106 /* chat_setmode_add_btn_normal.png in Resources */,
+				E247961021B136F500E95106 /* chat_setmode_key_btn_normal.png in Resources */,
+				E247961321B136F500E95106 /* chat_setmode_key_btn_high.png in Resources */,
+				E247961721B136F500E95106 /* chat_setmode_add_btn_high.png in Resources */,
 				22FB66F51F7F483B007A4888 /* Assets.xcassets in Resources */,
+				E247961521B136F500E95106 /* actionbar_camera_icon.png in Resources */,
 				22FB66F31F7F483B007A4888 /* Main.storyboard in Resources */,
+				E247961121B136F500E95106 /* chatting_biaoqing_btn_normal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
