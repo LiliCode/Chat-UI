@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "ChatUI"
+  s.name         = "Chat"
   s.version      = "0.1.1"
   s.summary      = "一个聊天页面的简单Demo"
 
@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Chat/ChatUI-Demo/*"
+  s.source_files  = "Chat/ChatUI-Demo/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -134,6 +134,9 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency 'Masonry', 'SDWebImage', 'UITableView+FDTemplateLayoutCell', 'TZImagePickerController'
+  s.dependency 'Masonry' 
+  s.dependency 'SDWebImage'
+  s.dependency 'UITableView+FDTemplateLayoutCell'
+  s.dependency 'TZImagePickerController'
 
 end

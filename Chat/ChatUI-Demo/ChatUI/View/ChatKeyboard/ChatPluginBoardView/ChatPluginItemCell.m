@@ -7,7 +7,7 @@
 //
 
 #import "ChatPluginItemCell.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 
 const CGFloat kItemTitleHeight = 20;
 
