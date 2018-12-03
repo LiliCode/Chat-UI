@@ -8,7 +8,7 @@
 
 #import "ChatPluginBoardView.h"
 #import "ChatPluginItemCell.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 
 NSString * const kChatPluginKeyboardWillShowNotification = @"kChatPluginKeyboardWillShowNotification";
 NSString * const kChatPluginKeyboardWillHideNotification = @"kChatPluginKeyboardWillHideNotification";

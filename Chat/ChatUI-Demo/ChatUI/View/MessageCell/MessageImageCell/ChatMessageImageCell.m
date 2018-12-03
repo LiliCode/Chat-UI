@@ -8,9 +8,9 @@
 
 #import "ChatMessageImageCell.h"
 #import <Photos/Photos.h>
-#import <UIImageView+WebCache.h>
-#import <SDImageCache.h>
-#import <Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/SDImageCache.h>
+#import <Masonry/Masonry.h>
 
 @interface ChatMessageImageCell ()
 @property (strong , nonatomic) UIImageView *photoImageView;

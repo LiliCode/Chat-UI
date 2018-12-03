@@ -7,7 +7,7 @@
 //
 
 #import "ChatKeyboard.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 
 const CGFloat kChatKeyboardAnimationDuration = 0.25;
 

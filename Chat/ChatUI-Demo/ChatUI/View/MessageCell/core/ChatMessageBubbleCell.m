@@ -7,7 +7,7 @@
 //
 
 #import "ChatMessageBubbleCell.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 
 @interface ChatMessageBubbleCell ()
 /** 气泡图片 */

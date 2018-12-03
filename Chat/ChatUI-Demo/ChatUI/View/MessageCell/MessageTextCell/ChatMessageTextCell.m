@@ -7,7 +7,7 @@
 //
 
 #import "ChatMessageTextCell.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 
 
 @interface ChatMessageTextCell ()

@@ -14,9 +14,9 @@
 #import "ChatMessageTextCell.h"
 #import "ChatMessageImageCell.h"
 
-#import <Masonry.h>
-#import <TZImagePickerController.h>
-#import <UITableView+FDTemplateLayoutCell.h>
+#import <Masonry/Masonry.h>
+#import <TZImagePickerController/TZImagePickerController.h>
+#import <UITableView_FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
 
 
 @interface ChatConversationViewController ()<UITableViewDataSource, UITableViewDelegate, ChatTableViewDelegate, ChatSessionInputBarControlDelegate>

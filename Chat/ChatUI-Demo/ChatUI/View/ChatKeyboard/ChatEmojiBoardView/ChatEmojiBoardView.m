@@ -8,7 +8,7 @@
 
 #import "ChatEmojiBoardView.h"
 #import "ChatEmojiItemCell.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 
 const CGFloat kChatEmojiKeyboardHeight = 200.0f;
 const CGFloat kChatEmojiKeyboardAnimationDuration = 0.25f;

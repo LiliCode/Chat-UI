@@ -9,7 +9,7 @@
 #import "ChatSessionInputBarControl.h"
 #import "ChatMessageCommon.h"
 #import "UIColor+ChatUI.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 
 const CGFloat kChatInputBarContentHeight = 50.0f;
 const CGFloat kChatInputBarContentMaxHeight = 100.0f;

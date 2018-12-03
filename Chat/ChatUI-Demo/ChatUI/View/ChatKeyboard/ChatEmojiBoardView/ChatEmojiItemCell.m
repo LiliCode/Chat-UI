@@ -7,7 +7,7 @@
 //
 
 #import "ChatEmojiItemCell.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 
 @implementation ChatEmojiItemCell
 

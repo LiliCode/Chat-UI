@@ -7,7 +7,7 @@
 //
 
 #import "ChatMessageBaseCell.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 
