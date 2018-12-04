@@ -8,6 +8,7 @@
 
 #import "ChatPluginBoardView.h"
 #import "ChatPluginItemCell.h"
+#import "UIImage+ChatUI.h"
 #import <Masonry/Masonry.h>
 
 NSString * const kChatPluginKeyboardWillShowNotification = @"kChatPluginKeyboardWillShowNotification";
@@ -121,7 +122,7 @@ const NSInteger kChatPluginNumberOfCols = 5;
     
     ChatPluginItem *itemModel = [self.pluginList objectAtIndex:indexPath.row];
     item.label.text = itemModel.title;
-    item.imageView.image = [UIImage imageNamed:itemModel.image];
+    item.imageView.image = [UIImage chat_imageNamed:itemModel.image];
     
     return item;
 }

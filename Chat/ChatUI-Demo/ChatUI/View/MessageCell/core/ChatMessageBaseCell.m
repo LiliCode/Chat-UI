@@ -84,7 +84,7 @@
     
     // ...
     // 其他的视图请在派生类中添加
-#if DEBUG
+#if CHAT_DEBUG
     self.pLogoImageView.backgroundColor = [UIColor redColor];
     self.pMessageContentView.backgroundColor = [UIColor greenColor];
 #endif

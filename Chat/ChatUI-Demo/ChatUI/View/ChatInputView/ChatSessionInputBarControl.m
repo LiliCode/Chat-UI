@@ -9,6 +9,7 @@
 #import "ChatSessionInputBarControl.h"
 #import "ChatMessageCommon.h"
 #import "UIColor+ChatUI.h"
+#import "UIImage+ChatUI.h"
 #import <Masonry/Masonry.h>
 
 const CGFloat kChatInputBarContentHeight = 50.0f;
@@ -126,8 +127,8 @@ static CGFloat kTextViewBottom = 8.0f;
     self.pluginButton = [[UIButton alloc] init];
     self.pluginButton.imageEdgeInsets = UIEdgeInsetsMake(4, 4, 4, 4);
     [self.pluginButton addTarget:self action:@selector(openPlugin:) forControlEvents:UIControlEventTouchUpInside];
-    [self.pluginButton setImage:[UIImage imageNamed:kInputControl_PluginButtonNormal] forState:UIControlStateNormal];
-    [self.pluginButton setImage:[UIImage imageNamed:kInputControl_PluginButtonHighlighted] forState:UIControlStateNormal];
+    [self.pluginButton setImage:[UIImage chat_imageNamed:kInputControl_PluginButtonNormal] forState:UIControlStateNormal];
+    [self.pluginButton setImage:[UIImage chat_imageNamed:kInputControl_PluginButtonHighlighted] forState:UIControlStateNormal];
     [self.inputBarBGView addSubview:self.pluginButton];
     [self.pluginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_offset(-8);
@@ -140,8 +141,8 @@ static CGFloat kTextViewBottom = 8.0f;
     self.emojiButton = [[UIButton alloc] init];
     self.emojiButton.imageEdgeInsets = UIEdgeInsetsMake(4, 4, 4, 4);
     [self.emojiButton addTarget:self action:@selector(openEmoji:) forControlEvents:UIControlEventTouchUpInside];
-    [self.emojiButton setImage:[UIImage imageNamed:kInputControl_EmojiButtonNormal] forState:UIControlStateNormal];
-    [self.emojiButton setImage:[UIImage imageNamed:kInputControl_EmojiButtonHighlighted] forState:UIControlStateNormal];
+    [self.emojiButton setImage:[UIImage chat_imageNamed:kInputControl_EmojiButtonNormal] forState:UIControlStateNormal];
+    [self.emojiButton setImage:[UIImage chat_imageNamed:kInputControl_EmojiButtonHighlighted] forState:UIControlStateNormal];
     [self.inputBarBGView addSubview:self.emojiButton];
     [self.emojiButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf.pluginButton.mas_left).offset(0);
@@ -154,8 +155,8 @@ static CGFloat kTextViewBottom = 8.0f;
     UIButton *penButton = [[UIButton alloc] init];
     penButton.imageEdgeInsets = UIEdgeInsetsMake(4, 4, 4, 4);
     [penButton addTarget:self action:@selector(penAction:) forControlEvents:UIControlEventTouchUpInside];
-    [penButton setImage:[UIImage imageNamed:kInputControl_VoiceButtonNormal] forState:UIControlStateNormal];
-    [penButton setImage:[UIImage imageNamed:kInputControl_VoiceButtonHighlighted] forState:UIControlStateNormal];
+    [penButton setImage:[UIImage chat_imageNamed:kInputControl_VoiceButtonNormal] forState:UIControlStateNormal];
+    [penButton setImage:[UIImage chat_imageNamed:kInputControl_VoiceButtonHighlighted] forState:UIControlStateNormal];
     [self.inputBarBGView addSubview:penButton];
     [penButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(8);

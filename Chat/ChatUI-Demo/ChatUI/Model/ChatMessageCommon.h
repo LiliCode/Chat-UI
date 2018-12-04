@@ -10,7 +10,7 @@
 #define _CHAT_MESSAGE_COMMON_H_
 
 
-#define DEBUG (0)   // 开启调试：1
+#define CHAT_DEBUG (0)   // 开启调试：1
 
 
 /**

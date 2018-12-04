@@ -24,7 +24,7 @@
     
     // 文本
     [self.messageContentView addSubview:self.label];
-#if DEBUG
+#if CHAT_DEBUG
     self.label.backgroundColor = [UIColor grayColor];
 #endif
 }
