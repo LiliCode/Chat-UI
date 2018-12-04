@@ -250,6 +250,7 @@
 		22FB66E71F7F483B007A4888 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				E247961921B655C600E95106 /* TargetAction */,
 				E247958221B121DB00E95106 /* ChatUI-Demo */,
 				22FB66EB1F7F483B007A4888 /* AppDelegate.h */,
 				22FB66EC1F7F483B007A4888 /* AppDelegate.m */,
@@ -304,7 +305,6 @@
 		E247958221B121DB00E95106 /* ChatUI-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				E247961921B655C600E95106 /* TargetAction */,
 				E247960021B136F500E95106 /* Resources */,
 				E247958321B121DB00E95106 /* ChatUI */,
 				E24795C221B121DB00E95106 /* Base */,

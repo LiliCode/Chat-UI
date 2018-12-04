@@ -96,20 +96,23 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = "Classes/**/*.h"
 
-  s.subspec 'ChatUI' do |ss|
-    ss.source_files  = 'Chat/ChatUI-Demo/**/*.{h,m}'
-    ss.resource_bundles = {s.name => ['Chat/ChatUI-Demo/Resources/*.png']}
+  s.subspec 'ChatUI' do |chatUI|
+    chatUI.source_files = 'Chat/ChatUI-Demo/**/*.{h,m}'
 
-    s.dependency 'Masonry' 
-    s.dependency 'SDWebImage'
-    s.dependency 'UITableView+FDTemplateLayoutCell'
-    s.dependency 'TZImagePickerController'
+    chatUI.resource_bundles = {
+      s.name => ['Chat/ChatUI-Demo/Resources/*.png']
+    }
+
+    chatUI.dependency 'Masonry' 
+    chatUI.dependency 'SDWebImage'
+    chatUI.dependency 'UITableView+FDTemplateLayoutCell'
+    chatUI.dependency 'TZImagePickerController'
   end
 
-  s.subspec 'TargetAction' do |ss|
-    ss.source_files = 'Chat/ChatUI-Demo/TargetAction/*.{h,m}'
+  s.subspec 'TargetAction' do |ta|
+    ta.source_files = 'Chat/ChatUI-Demo/TargetAction/*.{h,m}'
 
-    ss.dependency 'Chat/ChatUI'
+    ta.dependency 'Chat/ChatUI'
   end
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
