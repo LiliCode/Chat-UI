@@ -91,11 +91,26 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = 'Chat/ChatUI-Demo/**/*.{h,m}'
+  # s.source_files  = 'Chat/ChatUI-Demo/**/*.{h,m}'
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
+  s.subspec 'ChatUI' do |ss|
+    ss.source_files  = 'Chat/ChatUI-Demo/**/*.{h,m}'
+    ss.resource_bundles = {s.name => ['Chat/ChatUI-Demo/Resources/*.png']}
+
+    s.dependency 'Masonry' 
+    s.dependency 'SDWebImage'
+    s.dependency 'UITableView+FDTemplateLayoutCell'
+    s.dependency 'TZImagePickerController'
+  end
+
+  s.subspec 'TargetAction' do |ss|
+    ss.source_files = 'Chat/ChatUI-Demo/TargetAction/*.{h,m}'
+
+    ss.dependency 'Chat/ChatUI'
+  end
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -107,7 +122,7 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
-  s.resource_bundles = {s.name => ['Chat/ChatUI-Demo/Resources/*.png']}
+  # s.resource_bundles = {s.name => ['Chat/ChatUI-Demo/Resources/*.png']}
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -134,9 +149,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency 'Masonry' 
-  s.dependency 'SDWebImage'
-  s.dependency 'UITableView+FDTemplateLayoutCell'
-  s.dependency 'TZImagePickerController'
+
 
 end

@@ -56,6 +56,7 @@
 		E247961621B136F500E95106 /* chat_from_bg_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960A21B136F500E95106 /* chat_from_bg_normal@2x.png */; };
 		E247961721B136F500E95106 /* chat_setmode_add_btn_high.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960B21B136F500E95106 /* chat_setmode_add_btn_high.png */; };
 		E247961821B136F500E95106 /* actionbar_picture_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960C21B136F500E95106 /* actionbar_picture_icon.png */; };
+		E247961C21B6561400E95106 /* Target_Chat.m in Sources */ = {isa = PBXBuildFile; fileRef = E247961B21B6561400E95106 /* Target_Chat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,8 @@
 		E247960A21B136F500E95106 /* chat_from_bg_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_from_bg_normal@2x.png"; sourceTree = "<group>"; };
 		E247960B21B136F500E95106 /* chat_setmode_add_btn_high.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_setmode_add_btn_high.png; sourceTree = "<group>"; };
 		E247960C21B136F500E95106 /* actionbar_picture_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = actionbar_picture_icon.png; sourceTree = "<group>"; };
+		E247961A21B6561400E95106 /* Target_Chat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_Chat.h; sourceTree = "<group>"; };
+		E247961B21B6561400E95106 /* Target_Chat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_Chat.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +304,7 @@
 		E247958221B121DB00E95106 /* ChatUI-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				E247961921B655C600E95106 /* TargetAction */,
 				E247960021B136F500E95106 /* Resources */,
 				E247958321B121DB00E95106 /* ChatUI */,
 				E24795C221B121DB00E95106 /* Base */,
@@ -542,6 +546,15 @@
 				E247960C21B136F500E95106 /* actionbar_picture_icon.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E247961921B655C600E95106 /* TargetAction */ = {
+			isa = PBXGroup;
+			children = (
+				E247961A21B6561400E95106 /* Target_Chat.h */,
+				E247961B21B6561400E95106 /* Target_Chat.m */,
+			);
+			path = TargetAction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -827,6 +840,7 @@
 				E24795DC21B121DB00E95106 /* ChatEmojiItem.m in Sources */,
 				E24795CF21B121DB00E95106 /* ChatUI.m in Sources */,
 				E24795D321B121DB00E95106 /* ChatSessionInputBarControl.m in Sources */,
+				E247961C21B6561400E95106 /* Target_Chat.m in Sources */,
 				E24795E421B121DB00E95106 /* UIColor+ChatUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
