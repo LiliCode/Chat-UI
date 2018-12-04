@@ -38,23 +38,23 @@ typedef NS_ENUM(NSUInteger, ChatMessageDirection)
 };
 
 
-#define kInputControl_PluginButtonNormal @"chat_setmode_add_btn_normal"
-#define kInputControl_PluginButtonHighlighted @"chat_setmode_add_btn_high"
+#define kInputControl_PluginButtonNormal @"chat_setmode_add_btn_normal.png"
+#define kInputControl_PluginButtonHighlighted @"chat_setmode_add_btn_high.png"
 
-#define kInputControl_EmojiButtonNormal @"chatting_biaoqing_btn_normal"
-#define kInputControl_EmojiButtonHighlighted @"chatting_biaoqing_btn_high"
+#define kInputControl_EmojiButtonNormal @"chatting_biaoqing_btn_normal.png"
+#define kInputControl_EmojiButtonHighlighted @"chatting_biaoqing_btn_high.png"
 
-#define kInputControl_PenButtonNormal @"chat_setmode_key_btn_normal"
-#define kInputControl_PenButtonHighlighted @"chat_setmode_key_btn_high"
+#define kInputControl_PenButtonNormal @"chat_setmode_key_btn_normal.png"
+#define kInputControl_PenButtonHighlighted @"chat_setmode_key_btn_high.png"
 
-#define kInputControl_VoiceButtonNormal @"chat_setmode_voice_btn_normal"
-#define kInputControl_VoiceButtonHighlighted @"chat_setmode_voice_btn_high"
+#define kInputControl_VoiceButtonNormal @"chat_setmode_voice_btn_normal.png"
+#define kInputControl_VoiceButtonHighlighted @"chat_setmode_voice_btn_high.png"
 
 #define kMessageCell_BubbleImageSend @"chat_to_bg_normal"
 #define kMessageCell_BubbleImageReceived @"chat_from_bg_normal"
 
-#define kChatFcuntionView_PluginButtonImage @"actionbar_picture_icon"
-#define kChatFcuntionView_PluginButtonCamera @"actionbar_camera_icon"
+#define kChatFcuntionView_PluginButtonImage @"actionbar_picture_icon.png"
+#define kChatFcuntionView_PluginButtonCamera @"actionbar_camera_icon.png"
 
 
 #define IS_IPHONE_X ([UIScreen instancesRespondToSelector:@selector(currentMode)]? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
