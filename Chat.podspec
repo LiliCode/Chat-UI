@@ -110,7 +110,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'TargetAction' do |ta|
-    ta.source_files = 'Chat/ChatUI-Demo/TargetAction/*.{h,m}'
+    ta.source_files = 'Chat/TargetAction/*.{h,m}'
 
     ta.dependency 'Chat/ChatUI'
   end
