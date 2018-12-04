@@ -57,6 +57,7 @@
 		E247961721B136F500E95106 /* chat_setmode_add_btn_high.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960B21B136F500E95106 /* chat_setmode_add_btn_high.png */; };
 		E247961821B136F500E95106 /* actionbar_picture_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E247960C21B136F500E95106 /* actionbar_picture_icon.png */; };
 		E247961C21B6561400E95106 /* Target_Chat.m in Sources */ = {isa = PBXBuildFile; fileRef = E247961B21B6561400E95106 /* Target_Chat.m */; };
+		E247961F21B66EFA00E95106 /* UIImage+ChatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = E247961E21B66EF900E95106 /* UIImage+ChatUI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,8 @@
 		E247960C21B136F500E95106 /* actionbar_picture_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = actionbar_picture_icon.png; sourceTree = "<group>"; };
 		E247961A21B6561400E95106 /* Target_Chat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_Chat.h; sourceTree = "<group>"; };
 		E247961B21B6561400E95106 /* Target_Chat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_Chat.m; sourceTree = "<group>"; };
+		E247961D21B66EF900E95106 /* UIImage+ChatUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ChatUI.h"; sourceTree = "<group>"; };
+		E247961E21B66EF900E95106 /* UIImage+ChatUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ChatUI.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -518,6 +521,8 @@
 				E24795C721B121DB00E95106 /* UIView+ChatUI.m */,
 				E24795C921B121DB00E95106 /* UINavigationController+ChatUI.h */,
 				E24795C521B121DB00E95106 /* UINavigationController+ChatUI.m */,
+				E247961D21B66EF900E95106 /* UIImage+ChatUI.h */,
+				E247961E21B66EF900E95106 /* UIImage+ChatUI.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -815,6 +820,7 @@
 				E24795E521B121DB00E95106 /* UIView+ChatUI.m in Sources */,
 				E24795D621B121DB00E95106 /* ChatImageMessageContent.m in Sources */,
 				E24795D721B121DB00E95106 /* ChatMessageImageCell.m in Sources */,
+				E247961F21B66EFA00E95106 /* UIImage+ChatUI.m in Sources */,
 				E24795CE21B121DB00E95106 /* ChatConversationViewController.m in Sources */,
 				E24795D821B121DB00E95106 /* ChatMessageTextCell.m in Sources */,
 				22FB66ED1F7F483B007A4888 /* AppDelegate.m in Sources */,

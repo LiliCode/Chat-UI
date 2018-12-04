@@ -8,6 +8,7 @@
 
 #import "ChatMessageBubbleCell.h"
 #import <Masonry/Masonry.h>
+#import "UIImage+ChatUI.h"
 
 @interface ChatMessageBubbleCell ()
 /** 气泡图片 */
@@ -49,11 +50,11 @@
     switch (self.messageModel.direction)
     {
         case ChatMessageDirection_send: {
-            UIImage *bubbleImage = [UIImage imageNamed:kMessageCell_BubbleImageSend];
+            UIImage *bubbleImage = [UIImage chat_imageNamed:kMessageCell_BubbleImageSend];
             self.bubbleImageView.image = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(30, 20, 12, 32)];
         } break;
         case ChatMessageDirection_received: {
-            UIImage *bubbleImage = [UIImage imageNamed:kMessageCell_BubbleImageReceived];
+            UIImage *bubbleImage = [UIImage chat_imageNamed:kMessageCell_BubbleImageReceived];
             self.bubbleImageView.image = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(30, 20, 12, 50)];
         } break;
             
